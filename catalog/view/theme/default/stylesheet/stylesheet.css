@@ -6,7 +6,8 @@ html {
 body {
 	background-color: #F6F6F6;
 	color: #000000;
-	font-family: Arial, Helvetica, sans-serif;
+	/*font-family: Arial, Helvetica, sans-serif;*/
+	font-family: "Microsoft Yahei",sans-serif,arial,"Hiragino Sans GB";
 	margin: 0px;
 	padding: 0px;
 }
@@ -70,7 +71,9 @@ label {
 #column-left {
 	float: left;
 	width: 180px;
+	background: #FFF;
 }
+
 #column-right {
 	float: right;
 	width: 180px;
@@ -85,34 +88,34 @@ label {
 }
 #column-left + #column-right + #content, #column-left + #content {
 	margin-left: 195px;
+	padding: 20px;
+	background: #FFF;
 }
 #column-right + #content {
 	margin-right: 195px;
 }
 /* header */
 #header {
-	height: 90px;
+	height: 70px;
 	margin-bottom: 7px;
 	padding-bottom: 4px;
 	position: relative;
 	z-index: 99;
 }
+.header {
+    border-bottom: 3px solid #D9D9D9;
+}
 #header #logo {
 	position: absolute;
-	top: 25px;
+	top: 18px;
 	left: 15px;
-}
-#language {
-	position: absolute;
-	top: 15px;
-	left: 320px;
-	width: 80px;
-	color: #999;
-	line-height: 17px;
 }
 #language img {
 	cursor: pointer;
-	margin-right: 5px;
+	margin-left: 10px;
+	margin-top: 13px;
+	display: block;
+	float: left;
 }
 #currency {
 	width: 75px;
@@ -300,22 +303,26 @@ label {
 #header .links {
 	position: absolute;
 	right: 0px;
-	bottom: 3px;
-	font-size: 10px;
+	top: 26px;
 	padding-right: 10px;
 }
 #header .links a {
 	float: left;
 	display: block;
-	padding: 0px 0px 0px 7px;
-	color: #38B0E3;
+	padding: 5px 12px 5px 12px;
+	color: #2B2B2B;
 	text-decoration: none;
-	font-size: 12px;
+	font-size: 14px;
+	font-weight: bold;
+    -webkit-border-radius: 3px 3px 3px 3px;
+    -moz-border-radius: 3px 3px 3px 3px;
+    -khtml-border-radius: 3px 3px 3px 3px;
+    border-radius: 3px 3px 3px 3px;
 }
-#header .links a + a {
-	margin-left: 8px;
-	border-left: 1px solid #CCC;
+#header .links a:hover {
+    background: #38B0E3;
 }
+
 /* menu */
 #menu {
 /*	background: #585858;
@@ -401,6 +408,7 @@ label {
 .breadcrumb {
 	color: #CCCCCC;
 	margin-bottom: 10px;
+	display: none;
 }
 .success, .warning, .attention, .information {
 	padding: 10px 10px 10px 33px;
@@ -1490,10 +1498,7 @@ ul.box-filter > li ul {
 	display: none;
 }
 .cart-total {
-	border-top: 1px solid #DDDDDD;
-	overflow: auto;
-	padding-top: 8px;
-	margin-bottom: 15px;
+    color: #F00;
 }
 .cart-total table {
 	float: right;
@@ -1675,4 +1680,65 @@ ul.box-filter > li ul {
     text-align: center;
     height: 300px; 
 }
-
+#top-blocks {
+    background: none repeat scroll 0 0 #2B2B2B;
+    height: 37px;
+}
+.top_link {
+    float: right;
+    width: 40%;
+    padding-left: 100px;
+}
+.top_link ul, .top_link li {
+    padding: 0;
+    margin: 0;
+    line-height: 37px;
+    color: #DDD;
+}
+.top_link li {
+    list-style-type: none;
+    float: right;
+}
+.top_link a {
+    display: block;
+    height: 37px;
+    line-height: 37px;
+    color: #DDD;
+    text-decoration: none;
+    border-right: 1px solid #3D3D3D;
+    padding: 0 13px;
+}
+.top_link a:hover {
+    background: none repeat scroll 0 0 #000;
+}
+.acc_header {
+    line-height: 40px;
+    font-size: 17px;
+    font-weight: 700;
+    color: #555;
+    border-bottom: 3px solid #CCC;
+}
+.acc_left {
+    margin: 10px 20px 20px 20px;
+}
+.acc_content ul, .acc_content li {
+    padding: 0;
+    margin: 0;
+}
+.acc_content li {
+    list-style: none;
+    text-align: center;
+    line-height: 34px;
+    border-bottom: 1px solid #EEE;
+    background-image: url(../image/bzj.gif);
+    background-repeat: no-repeat;
+    background-position: center right;
+}
+.acc_content a {
+    color: #333;
+    text-decoration: none;
+    font-size: 13px;
+}
+.acc_content a:hover {
+    text-decoration: underline;
+}

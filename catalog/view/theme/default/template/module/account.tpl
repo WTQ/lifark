@@ -1,6 +1,6 @@
-<div class="box">
-  <div class="box-heading"><?php echo $heading_title; ?></div>
-  <div class="box-content">
+<div class="acc_left">
+  <div class="acc_header"><?php echo $heading_title; ?></div>
+  <div class="acc_content">
     <ul>
       <li><a href="<?php echo $order; ?>"><?php echo $text_order; ?></a></li>
       <li><a href="<?php echo $edit; ?>"><?php echo $text_edit; ?></a></li>

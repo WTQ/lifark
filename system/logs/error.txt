@@ -79,3 +79,8 @@
 2013-12-10 20:19:11 - PHP Notice:  Undefined variable: text_contract in D:\web\www\opencartcn\catalog\view\theme\default\template\common\footer.tpl on line 3
 2013-12-10 20:20:26 - PHP Notice:  Undefined variable: text_contract in D:\web\www\opencartcn\catalog\view\theme\default\template\common\footer.tpl on line 3
 2013-12-10 20:21:39 - PHP Notice:  Undefined variable: text_contract in D:\web\www\opencartcn\catalog\view\theme\default\template\common\footer.tpl on line 3
+2013-12-11 19:17:32 - PHP Warning:  file_get_contents(D:\web\www\opencartcn/system/cache/cache.language.1386757235) [<a href='function.file-get-contents'>function.file-get-contents</a>]: failed to open stream: No such file or directory in D:\web\www\opencartcn\system\library\cache.php on line 9
+2013-12-11 19:17:32 - PHP Warning:  file_get_contents(D:\web\www\opencartcn/system/cache/cache.currency.1386757235) [<a href='function.file-get-contents'>function.file-get-contents</a>]: failed to open stream: No such file or directory in D:\web\www\opencartcn\system\library\cache.php on line 9
+2013-12-11 20:10:52 - PHP Notice:  Undefined variable: shopping_cart in D:\web\www\opencartcn\catalog\view\theme\default\template\module\cart.tpl on line 1
+2013-12-11 20:11:07 - PHP Notice:  Undefined variable: shopping_cart in D:\web\www\opencartcn\catalog\view\theme\default\template\module\cart.tpl on line 1
+2013-12-11 20:12:48 - PHP Notice:  Undefined variable: shopping_cart in D:\web\www\opencartcn\catalog\view\theme\default\template\module\cart.tpl on line 1

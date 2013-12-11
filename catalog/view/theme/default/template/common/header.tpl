@@ -49,29 +49,33 @@ $('body').prepend('<iframe src="<?php echo $store; ?>" style="display: none;"></
 <?php echo $google_analytics; ?>
 </head>
 <body>
-<div id="container">
-<div id="header" class="container">
-  <?php if ($logo) { ?>
-  <div id="logo"><a href="<?php echo $home; ?>"><img src="<?php echo $logo; ?>" title="<?php echo $name; ?>" alt="<?php echo $name; ?>" /></a></div>
-  <?php } ?>
-  <?php echo $language; ?>
-  <?php echo $currency; ?>
-  <?php echo $cart; ?>
-  <div id="search">
-    <div class="button-search"></div>
-    <input type="text" name="search" placeholder="<?php echo $text_search; ?>" value="<?php echo $search; ?>" />
-  </div>
-  <div id="welcome">
-    <?php if (!$logged) { ?>
-    <?php echo $text_welcome; ?>
-    <?php } else { ?>
-    <?php echo $text_logged; ?>
-    <?php } ?>
-  </div>
-  <div class="links"><a href="<?php echo $home; ?>"><?php echo $text_home; ?></a><a href="<?php echo $wishlist; ?>" id="wishlist-total"><?php echo $text_wishlist; ?></a><a href="<?php echo $account; ?>"><?php echo $text_account; ?></a><a href="<?php echo $shopping_cart; ?>"><?php echo $text_shopping_cart; ?></a><a href="<?php echo $checkout; ?>"><?php echo $text_checkout; ?></a></div>
+<div id="top-blocks">
+    <div class="container">
+        <div class="top_link">
+            <ul>
+                <?php echo $language; ?>
+                <li><a href="<?php echo $shopping_cart; ?>">购物车 <?php echo $cart; ?> 件</a></li>
+                <?php if (!$logged) { ?>
+                <?php echo $text_welcome; ?>
+                <?php } else { ?>
+                <?php echo $text_logged; ?>
+                <?php } ?>
+            </ul>
+        </div>
+    </div>
 </div>
+<div id="container">
+    <div class="header">
+        <div id="header" class="container">
+          <?php if ($logo) { ?>
+          <div id="logo"><a href="<?php echo $home; ?>"><img src="<?php echo $logo; ?>" title="<?php echo $name; ?>" alt="<?php echo $name; ?>" /></a></div>
+          <?php } ?>
+          <?php echo $currency; ?>
+          <div class="links"><a href="<?php echo $home; ?>"><?php echo $text_home; ?></a><a href="index.php?route=product/category&path=20">在线商城</a><a href="<?php echo $wishlist; ?>" id="wishlist-total"><?php echo $text_wishlist; ?></a><a href="<?php echo $account; ?>"><?php echo $text_account; ?></a><a href="<?php echo $shopping_cart; ?>"><?php echo $text_shopping_cart; ?></a><a href="<?php echo $checkout; ?>"><?php echo $text_checkout; ?></a></div>
+        </div>
+    </div>
 <?php if ($categories) { ?>
-<div class="navi">
+<!--<div class="navi">
     <div id="menu" class="container">
       <ul>
         <?php foreach ($categories as $category) { ?>
@@ -94,6 +98,6 @@ $('body').prepend('<iframe src="<?php echo $store; ?>" style="display: none;"></
         <?php } ?>
       </ul>
     </div>
-</div>
+</div>-->
 <?php } ?>
-<div id="notification"></div>
+<div id="notification" class="container"></div>
