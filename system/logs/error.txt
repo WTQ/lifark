@@ -1,0 +1,81 @@
+2013-03-12 0:24:35 - PHP Warning:  mail() [<a href='function.mail'>function.mail</a>]: Failed to connect to mailserver at &quot;localhost&quot; port 25, verify your &quot;SMTP&quot; and &quot;smtp_port&quot; setting in php.ini or use ini_set() in D:\PHP\opencart_v1.5.5.1 - CN\upload\system\library\mail.php on line 150
+2013-03-12 0:24:35 - PHP Warning:  Cannot modify header information - headers already sent by (output started at D:\PHP\opencart_v1.5.5.1 - CN\upload\index.php:102) in D:\PHP\opencart_v1.5.5.1 - CN\upload\system\engine\controller.php on line 28
+2013-03-12 0:24:35 - PHP Warning:  Cannot modify header information - headers already sent by (output started at D:\PHP\opencart_v1.5.5.1 - CN\upload\index.php:102) in D:\PHP\opencart_v1.5.5.1 - CN\upload\system\engine\controller.php on line 29
+2013-03-12 0:25:21 - PHP Warning:  mail() [<a href='function.mail'>function.mail</a>]: Failed to connect to mailserver at &quot;localhost&quot; port 25, verify your &quot;SMTP&quot; and &quot;smtp_port&quot; setting in php.ini or use ini_set() in D:\PHP\opencart_v1.5.5.1 - CN\upload\system\library\mail.php on line 150
+2013-03-23 12:05:27 - PHP Warning:  mail() [<a href='function.mail'>function.mail</a>]: Failed to connect to mailserver at &quot;localhost&quot; port 25, verify your &quot;SMTP&quot; and &quot;smtp_port&quot; setting in php.ini or use ini_set() in D:\PHP\opencart_v1.5.5.1 - CN\upload\system\library\mail.php on line 150
+2013-03-23 12:05:27 - PHP Warning:  Cannot modify header information - headers already sent by (output started at D:\PHP\opencart_v1.5.5.1 - CN\upload\index.php:102) in D:\PHP\opencart_v1.5.5.1 - CN\upload\system\engine\controller.php on line 28
+2013-03-23 12:05:27 - PHP Warning:  Cannot modify header information - headers already sent by (output started at D:\PHP\opencart_v1.5.5.1 - CN\upload\index.php:102) in D:\PHP\opencart_v1.5.5.1 - CN\upload\system\engine\controller.php on line 29
+2013-03-23 12:58:45 - PHP Warning:  mail() [<a href='function.mail'>function.mail</a>]: Failed to connect to mailserver at &quot;localhost&quot; port 25, verify your &quot;SMTP&quot; and &quot;smtp_port&quot; setting in php.ini or use ini_set() in D:\PHP\opencart_v1.5.5.1 - CN\upload\system\library\mail.php on line 150
+2013-03-23 12:59:16 - PHP Warning:  mail() [<a href='function.mail'>function.mail</a>]: Failed to connect to mailserver at &quot;localhost&quot; port 25, verify your &quot;SMTP&quot; and &quot;smtp_port&quot; setting in php.ini or use ini_set() in D:\PHP\opencart_v1.5.5.1 - CN\upload\system\library\mail.php on line 150
+2013-03-23 13:01:19 - PHP Warning:  mail() [<a href='function.mail'>function.mail</a>]: Failed to connect to mailserver at &quot;localhost&quot; port 25, verify your &quot;SMTP&quot; and &quot;smtp_port&quot; setting in php.ini or use ini_set() in D:\PHP\opencart_v1.5.5.1 - CN\upload\system\library\mail.php on line 150
+2013-03-23 13:01:56 - PHP Warning:  mail() [<a href='function.mail'>function.mail</a>]: Failed to connect to mailserver at &quot;localhost&quot; port 25, verify your &quot;SMTP&quot; and &quot;smtp_port&quot; setting in php.ini or use ini_set() in D:\PHP\opencart_v1.5.5.1 - CN\upload\system\library\mail.php on line 150
+2013-03-23 13:03:32 - PHP Warning:  mail() [<a href='function.mail'>function.mail</a>]: Failed to connect to mailserver at &quot;localhost&quot; port 25, verify your &quot;SMTP&quot; and &quot;smtp_port&quot; setting in php.ini or use ini_set() in D:\PHP\opencart_v1.5.5.1 - CN\upload\system\library\mail.php on line 150
+2013-03-23 13:05:10 - PHP Warning:  mail() [<a href='function.mail'>function.mail</a>]: Failed to connect to mailserver at &quot;localhost&quot; port 25, verify your &quot;SMTP&quot; and &quot;smtp_port&quot; setting in php.ini or use ini_set() in D:\PHP\opencart_v1.5.5.1 - CN\upload\system\library\mail.php on line 150
+2013-12-03 15:00:02 - PHP Notice:  Error: Could not load language english.php! in D:\web\www\opencartcn\system\library\language.php on line 39
+2013-12-03 15:24:37 - PHP Notice:  Undefined variable: alipay_anti_phishing in D:\web\www\opencartcn\admin\view\template\payment\alipay.tpl on line 60
+2013-12-03 15:25:45 - PHP Notice:  Undefined variable: alipay_anti_phishing in D:\web\www\opencartcn\admin\view\template\payment\alipay.tpl on line 60
+2013-12-03 15:26:07 - PHP Notice:  Undefined variable: alipay_anti_phishing in D:\web\www\opencartcn\admin\view\template\payment\alipay.tpl on line 60
+2013-12-03 15:31:41 - PHP Notice:  Undefined variable: alipay_anti_phishing in D:\web\www\opencartcn\admin\view\template\payment\alipay.tpl on line 60
+2013-12-03 15:33:02 - PHP Notice:  Undefined variable: alipay_anti_phishing in D:\web\www\opencartcn\admin\view\template\payment\alipay.tpl on line 60
+2013-12-03 15:33:08 - PHP Notice:  Undefined variable: alipay_anti_phishing in D:\web\www\opencartcn\admin\view\template\payment\alipay.tpl on line 60
+2013-12-03 16:25:57 - PHP Notice:  Undefined variable: alipay_anti_phishing in D:\web\www\opencartcn\admin\view\template\payment\alipay.tpl on line 60
+2013-12-05 0:39:30 - PHP Warning:  mail() [<a href='function.mail'>function.mail</a>]: Failed to connect to mailserver at &quot;localhost&quot; port 25, verify your &quot;SMTP&quot; and &quot;smtp_port&quot; setting in php.ini or use ini_set() in D:\web\www\opencartcn\system\library\mail.php on line 150
+2013-12-05 19:34:00 - PHP Notice:  Undefined index: fax in D:\web\www\opencartcn\catalog\model\account\customer.php on line 89
+2013-12-05 19:37:12 - PHP Notice:  Undefined index: fax in D:\web\www\opencartcn\catalog\model\account\customer.php on line 89
+2013-12-05 19:50:15 - PHP Notice:  Undefined index: fax in D:\web\www\opencartcn\catalog\model\account\customer.php on line 14
+2013-12-05 19:50:16 - PHP Warning:  mail() [<a href='function.mail'>function.mail</a>]: Failed to connect to mailserver at &quot;localhost&quot; port 25, verify your &quot;SMTP&quot; and &quot;smtp_port&quot; setting in php.ini or use ini_set() in D:\web\www\opencartcn\system\library\mail.php on line 150
+2013-12-05 19:51:37 - PHP Warning:  mail() [<a href='function.mail'>function.mail</a>]: Failed to connect to mailserver at &quot;localhost&quot; port 25, verify your &quot;SMTP&quot; and &quot;smtp_port&quot; setting in php.ini or use ini_set() in D:\web\www\opencartcn\system\library\mail.php on line 150
+2013-12-05 19:55:15 - PHP Notice:  Undefined index: fax in D:\web\www\opencartcn\catalog\model\account\customer.php on line 14
+2013-12-05 19:55:16 - PHP Warning:  mail() [<a href='function.mail'>function.mail</a>]: Failed to connect to mailserver at &quot;localhost&quot; port 25, verify your &quot;SMTP&quot; and &quot;smtp_port&quot; setting in php.ini or use ini_set() in D:\web\www\opencartcn\system\library\mail.php on line 150
+2013-12-05 19:56:41 - PHP Notice:  Undefined index: fax in D:\web\www\opencartcn\catalog\model\account\customer.php on line 89
+2013-12-05 20:48:39 - PHP Notice:  Undefined index: firstname in D:\web\www\opencartcn\catalog\controller\checkout\payment_address.php on line 170
+2013-12-05 20:48:39 - PHP Notice:  Undefined index: address_1 in D:\web\www\opencartcn\catalog\controller\checkout\payment_address.php on line 195
+2013-12-05 20:48:39 - PHP Notice:  Undefined index: city in D:\web\www\opencartcn\catalog\controller\checkout\payment_address.php on line 199
+2013-12-05 20:48:39 - PHP Notice:  Undefined index: country_id in D:\web\www\opencartcn\catalog\controller\checkout\payment_address.php on line 205
+2013-12-05 20:48:39 - PHP Notice:  Undefined index: country_id in D:\web\www\opencartcn\catalog\controller\checkout\payment_address.php on line 220
+2013-12-05 20:48:57 - PHP Notice:  Undefined index: firstname in D:\web\www\opencartcn\catalog\controller\checkout\payment_address.php on line 170
+2013-12-05 20:48:57 - PHP Notice:  Undefined index: address_1 in D:\web\www\opencartcn\catalog\controller\checkout\payment_address.php on line 195
+2013-12-05 20:48:57 - PHP Notice:  Undefined index: city in D:\web\www\opencartcn\catalog\controller\checkout\payment_address.php on line 199
+2013-12-05 20:48:57 - PHP Notice:  Undefined index: country_id in D:\web\www\opencartcn\catalog\controller\checkout\payment_address.php on line 205
+2013-12-05 20:48:57 - PHP Notice:  Undefined index: country_id in D:\web\www\opencartcn\catalog\controller\checkout\payment_address.php on line 220
+2013-12-05 20:50:31 - PHP Notice:  Undefined index: firstname in D:\web\www\opencartcn\catalog\controller\checkout\payment_address.php on line 170
+2013-12-05 20:50:31 - PHP Notice:  Undefined index: address_1 in D:\web\www\opencartcn\catalog\controller\checkout\payment_address.php on line 195
+2013-12-05 20:50:31 - PHP Notice:  Undefined index: city in D:\web\www\opencartcn\catalog\controller\checkout\payment_address.php on line 199
+2013-12-05 20:50:31 - PHP Notice:  Undefined index: country_id in D:\web\www\opencartcn\catalog\controller\checkout\payment_address.php on line 205
+2013-12-05 20:50:31 - PHP Notice:  Undefined index: country_id in D:\web\www\opencartcn\catalog\controller\checkout\payment_address.php on line 220
+2013-12-05 20:50:45 - PHP Notice:  Undefined index: firstname in D:\web\www\opencartcn\catalog\controller\checkout\payment_address.php on line 170
+2013-12-05 20:50:45 - PHP Notice:  Undefined index: address_1 in D:\web\www\opencartcn\catalog\controller\checkout\payment_address.php on line 195
+2013-12-05 20:50:45 - PHP Notice:  Undefined index: city in D:\web\www\opencartcn\catalog\controller\checkout\payment_address.php on line 199
+2013-12-05 20:50:45 - PHP Notice:  Undefined index: country_id in D:\web\www\opencartcn\catalog\controller\checkout\payment_address.php on line 205
+2013-12-05 20:50:45 - PHP Notice:  Undefined index: country_id in D:\web\www\opencartcn\catalog\controller\checkout\payment_address.php on line 220
+2013-12-05 20:50:51 - PHP Notice:  Undefined index: firstname in D:\web\www\opencartcn\catalog\controller\checkout\payment_address.php on line 170
+2013-12-05 20:50:51 - PHP Notice:  Undefined index: address_1 in D:\web\www\opencartcn\catalog\controller\checkout\payment_address.php on line 195
+2013-12-05 20:50:51 - PHP Notice:  Undefined index: city in D:\web\www\opencartcn\catalog\controller\checkout\payment_address.php on line 199
+2013-12-05 20:50:51 - PHP Notice:  Undefined index: country_id in D:\web\www\opencartcn\catalog\controller\checkout\payment_address.php on line 205
+2013-12-05 20:50:51 - PHP Notice:  Undefined index: country_id in D:\web\www\opencartcn\catalog\controller\checkout\payment_address.php on line 220
+2013-12-05 20:50:58 - PHP Notice:  Undefined index: firstname in D:\web\www\opencartcn\catalog\controller\checkout\payment_address.php on line 170
+2013-12-05 20:50:58 - PHP Notice:  Undefined index: address_1 in D:\web\www\opencartcn\catalog\controller\checkout\payment_address.php on line 195
+2013-12-05 20:50:58 - PHP Notice:  Undefined index: city in D:\web\www\opencartcn\catalog\controller\checkout\payment_address.php on line 199
+2013-12-05 20:50:58 - PHP Notice:  Undefined index: country_id in D:\web\www\opencartcn\catalog\controller\checkout\payment_address.php on line 205
+2013-12-05 20:50:58 - PHP Notice:  Undefined index: country_id in D:\web\www\opencartcn\catalog\controller\checkout\payment_address.php on line 220
+2013-12-05 20:51:04 - PHP Notice:  Undefined index: firstname in D:\web\www\opencartcn\catalog\controller\checkout\payment_address.php on line 170
+2013-12-05 20:51:04 - PHP Notice:  Undefined index: address_1 in D:\web\www\opencartcn\catalog\controller\checkout\payment_address.php on line 195
+2013-12-05 20:51:04 - PHP Notice:  Undefined index: city in D:\web\www\opencartcn\catalog\controller\checkout\payment_address.php on line 199
+2013-12-05 20:51:04 - PHP Notice:  Undefined index: country_id in D:\web\www\opencartcn\catalog\controller\checkout\payment_address.php on line 205
+2013-12-05 20:51:04 - PHP Notice:  Undefined index: country_id in D:\web\www\opencartcn\catalog\controller\checkout\payment_address.php on line 220
+2013-12-05 20:51:12 - PHP Notice:  Undefined index: firstname in D:\web\www\opencartcn\catalog\controller\checkout\payment_address.php on line 170
+2013-12-05 20:51:12 - PHP Notice:  Undefined index: address_1 in D:\web\www\opencartcn\catalog\controller\checkout\payment_address.php on line 195
+2013-12-05 20:51:12 - PHP Notice:  Undefined index: city in D:\web\www\opencartcn\catalog\controller\checkout\payment_address.php on line 199
+2013-12-05 20:51:12 - PHP Notice:  Undefined index: country_id in D:\web\www\opencartcn\catalog\controller\checkout\payment_address.php on line 205
+2013-12-05 20:51:12 - PHP Notice:  Undefined index: country_id in D:\web\www\opencartcn\catalog\controller\checkout\payment_address.php on line 220
+2013-12-05 21:01:56 - PHP Notice:  Undefined variable: alipay_anti_phishing in D:\web\www\opencartcn\admin\view\template\payment\alipay.tpl on line 60
+2013-12-05 21:02:38 - PHP Notice:  Undefined variable: alipay_anti_phishing in D:\web\www\opencartcn\admin\view\template\payment\alipay.tpl on line 60
+2013-12-05 21:09:33 - PHP Warning:  mail() [<a href='function.mail'>function.mail</a>]: Failed to connect to mailserver at &quot;localhost&quot; port 25, verify your &quot;SMTP&quot; and &quot;smtp_port&quot; setting in php.ini or use ini_set() in D:\web\www\opencartcn\system\library\mail.php on line 150
+2013-12-05 21:14:07 - PHP Notice:  Undefined index: company in D:\web\www\opencartcn\catalog\model\account\address.php on line 16
+2013-12-05 21:14:51 - PHP Notice:  Undefined index: company in D:\web\www\opencartcn\catalog\model\account\address.php on line 16
+2013-12-05 21:18:01 - PHP Notice:  Undefined index: shipping_address_id in D:\web\www\opencartcn\catalog\controller\checkout\confirm.php on line 173
+2013-12-06 16:07:18 - PHP Warning:  mail() [<a href='function.mail'>function.mail</a>]: Failed to connect to mailserver at &quot;localhost&quot; port 25, verify your &quot;SMTP&quot; and &quot;smtp_port&quot; setting in php.ini or use ini_set() in D:\web\www\opencartcn\system\library\mail.php on line 150
+2013-12-07 9:40:28 - PHP Warning:  mail() [<a href='function.mail'>function.mail</a>]: Failed to connect to mailserver at &quot;localhost&quot; port 25, verify your &quot;SMTP&quot; and &quot;smtp_port&quot; setting in php.ini or use ini_set() in D:\web\www\opencartcn\system\library\mail.php on line 150
+2013-12-10 20:19:11 - PHP Notice:  Undefined variable: text_contract in D:\web\www\opencartcn\catalog\view\theme\default\template\common\footer.tpl on line 3
+2013-12-10 20:20:26 - PHP Notice:  Undefined variable: text_contract in D:\web\www\opencartcn\catalog\view\theme\default\template\common\footer.tpl on line 3
+2013-12-10 20:21:39 - PHP Notice:  Undefined variable: text_contract in D:\web\www\opencartcn\catalog\view\theme\default\template\common\footer.tpl on line 3
