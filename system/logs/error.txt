@@ -84,3 +84,5 @@
 2013-12-11 20:10:52 - PHP Notice:  Undefined variable: shopping_cart in D:\web\www\opencartcn\catalog\view\theme\default\template\module\cart.tpl on line 1
 2013-12-11 20:11:07 - PHP Notice:  Undefined variable: shopping_cart in D:\web\www\opencartcn\catalog\view\theme\default\template\module\cart.tpl on line 1
 2013-12-11 20:12:48 - PHP Notice:  Undefined variable: shopping_cart in D:\web\www\opencartcn\catalog\view\theme\default\template\module\cart.tpl on line 1
+2013-12-12 11:33:36 - PHP Notice:  Undefined index: fax in D:\web\www\opencartcn\catalog\model\account\customer.php on line 14
+2013-12-12 11:33:37 - PHP Warning:  mail() [<a href='function.mail'>function.mail</a>]: Failed to connect to mailserver at &quot;localhost&quot; port 25, verify your &quot;SMTP&quot; and &quot;smtp_port&quot; setting in php.ini or use ini_set() in D:\web\www\opencartcn\system\library\mail.php on line 150

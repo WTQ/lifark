@@ -1,1 +1,1 @@
-<span class="cart-total"><?php echo intval($text_items); ?></span>
+<span id="cart-total"><?php echo intval($text_items); ?></span>

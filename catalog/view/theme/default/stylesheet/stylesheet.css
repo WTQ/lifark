@@ -1497,7 +1497,7 @@ ul.box-filter > li ul {
 .cart-module > div {
 	display: none;
 }
-.cart-total {
+#cart-total {
     color: #F00;
 }
 .cart-total table {
