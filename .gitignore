@@ -4,5 +4,5 @@
 .project
 download/
 system/cache/cache*
-./config.php
+config.php
 admin/config.php
