@@ -1,11 +1,11 @@
 <div id="footer">
     <div  class="container">
       <div class="column">
-        <h3>联系我们</h3>
+        <h3><?php echo $text_contact?></h3>
         <ul>
-          <li><a href="">新浪微博</a></li>
-          <li><a href="">腾讯微博</a></li>
-          <li><a href="">人人网</a></li>
+          <li><a href=""><?php echo $text_sinaweblog?></a></li>
+          <li><a href=""><?php echo $text_tecentweblog?></a></li>
+          <li><a href=""><?php echo $text_renren?></a></li>
         </ul>
       </div>
       <?php if ($informations) { ?>
