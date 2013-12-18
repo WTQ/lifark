@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 3.3.9
+-- version 3.5.1
 -- http://www.phpmyadmin.net
 --
 -- 主机: localhost
--- 生成日期: 2013 年 12 月 18 日 20:25
--- 服务器版本: 5.1.53
--- PHP 版本: 5.3.4
+-- 生成日期: 2013 年 12 月 18 日 14:45
+-- 服务器版本: 5.5.24-log
+-- PHP 版本: 5.3.13
 
 SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
 
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
@@ -93,11 +94,6 @@ CREATE TABLE IF NOT EXISTS `oc_affiliate` (
   PRIMARY KEY (`affiliate_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
---
--- 转存表中的数据 `oc_affiliate`
---
-
-
 -- --------------------------------------------------------
 
 --
@@ -113,11 +109,6 @@ CREATE TABLE IF NOT EXISTS `oc_affiliate_transaction` (
   `date_added` datetime NOT NULL,
   PRIMARY KEY (`affiliate_transaction_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
-
---
--- 转存表中的数据 `oc_affiliate_transaction`
---
-
 
 -- --------------------------------------------------------
 
@@ -406,11 +397,6 @@ CREATE TABLE IF NOT EXISTS `oc_category_filter` (
   PRIMARY KEY (`category_id`,`filter_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
---
--- 转存表中的数据 `oc_category_filter`
---
-
-
 -- --------------------------------------------------------
 
 --
@@ -447,11 +433,6 @@ CREATE TABLE IF NOT EXISTS `oc_category_to_layout` (
   `layout_id` int(11) NOT NULL,
   PRIMARY KEY (`category_id`,`store_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-
---
--- 转存表中的数据 `oc_category_to_layout`
---
-
 
 -- --------------------------------------------------------
 
@@ -543,11 +524,6 @@ CREATE TABLE IF NOT EXISTS `oc_coupon_category` (
   PRIMARY KEY (`coupon_id`,`category_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
---
--- 转存表中的数据 `oc_coupon_category`
---
-
-
 -- --------------------------------------------------------
 
 --
@@ -564,11 +540,6 @@ CREATE TABLE IF NOT EXISTS `oc_coupon_history` (
   PRIMARY KEY (`coupon_history_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
---
--- 转存表中的数据 `oc_coupon_history`
---
-
-
 -- --------------------------------------------------------
 
 --
@@ -581,11 +552,6 @@ CREATE TABLE IF NOT EXISTS `oc_coupon_product` (
   `product_id` int(11) NOT NULL,
   PRIMARY KEY (`coupon_product_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
-
---
--- 转存表中的数据 `oc_coupon_product`
---
-
 
 -- --------------------------------------------------------
 
@@ -665,11 +631,6 @@ CREATE TABLE IF NOT EXISTS `oc_customer_ban_ip` (
   KEY `ip` (`ip`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
---
--- 转存表中的数据 `oc_customer_ban_ip`
---
-
-
 -- --------------------------------------------------------
 
 --
@@ -685,11 +646,6 @@ CREATE TABLE IF NOT EXISTS `oc_customer_field` (
   `sort_order` int(3) NOT NULL,
   PRIMARY KEY (`customer_id`,`custom_field_id`,`custom_field_value_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-
---
--- 转存表中的数据 `oc_customer_field`
---
-
 
 -- --------------------------------------------------------
 
@@ -751,11 +707,6 @@ CREATE TABLE IF NOT EXISTS `oc_customer_history` (
   PRIMARY KEY (`customer_history_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
---
--- 转存表中的数据 `oc_customer_history`
---
-
-
 -- --------------------------------------------------------
 
 --
@@ -797,11 +748,6 @@ CREATE TABLE IF NOT EXISTS `oc_customer_online` (
   PRIMARY KEY (`ip`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
---
--- 转存表中的数据 `oc_customer_online`
---
-
-
 -- --------------------------------------------------------
 
 --
@@ -818,11 +764,6 @@ CREATE TABLE IF NOT EXISTS `oc_customer_reward` (
   PRIMARY KEY (`customer_reward_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
---
--- 转存表中的数据 `oc_customer_reward`
---
-
-
 -- --------------------------------------------------------
 
 --
@@ -838,11 +779,6 @@ CREATE TABLE IF NOT EXISTS `oc_customer_transaction` (
   `date_added` datetime NOT NULL,
   PRIMARY KEY (`customer_transaction_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
-
---
--- 转存表中的数据 `oc_customer_transaction`
---
-
 
 -- --------------------------------------------------------
 
@@ -861,11 +797,6 @@ CREATE TABLE IF NOT EXISTS `oc_custom_field` (
   PRIMARY KEY (`custom_field_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
---
--- 转存表中的数据 `oc_custom_field`
---
-
-
 -- --------------------------------------------------------
 
 --
@@ -879,11 +810,6 @@ CREATE TABLE IF NOT EXISTS `oc_custom_field_description` (
   PRIMARY KEY (`custom_field_id`,`language_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
---
--- 转存表中的数据 `oc_custom_field_description`
---
-
-
 -- --------------------------------------------------------
 
 --
@@ -895,11 +821,6 @@ CREATE TABLE IF NOT EXISTS `oc_custom_field_to_customer_group` (
   `customer_group_id` int(11) NOT NULL,
   PRIMARY KEY (`custom_field_id`,`customer_group_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-
---
--- 转存表中的数据 `oc_custom_field_to_customer_group`
---
-
 
 -- --------------------------------------------------------
 
@@ -914,11 +835,6 @@ CREATE TABLE IF NOT EXISTS `oc_custom_field_value` (
   PRIMARY KEY (`custom_field_value_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
---
--- 转存表中的数据 `oc_custom_field_value`
---
-
-
 -- --------------------------------------------------------
 
 --
@@ -932,11 +848,6 @@ CREATE TABLE IF NOT EXISTS `oc_custom_field_value_description` (
   `name` varchar(128) NOT NULL,
   PRIMARY KEY (`custom_field_value_id`,`language_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-
---
--- 转存表中的数据 `oc_custom_field_value_description`
---
-
 
 -- --------------------------------------------------------
 
@@ -953,11 +864,6 @@ CREATE TABLE IF NOT EXISTS `oc_download` (
   PRIMARY KEY (`download_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
---
--- 转存表中的数据 `oc_download`
---
-
-
 -- --------------------------------------------------------
 
 --
@@ -970,11 +876,6 @@ CREATE TABLE IF NOT EXISTS `oc_download_description` (
   `name` varchar(64) NOT NULL,
   PRIMARY KEY (`download_id`,`language_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-
---
--- 转存表中的数据 `oc_download_description`
---
-
 
 -- --------------------------------------------------------
 
@@ -1031,11 +932,6 @@ CREATE TABLE IF NOT EXISTS `oc_filter` (
   PRIMARY KEY (`filter_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
---
--- 转存表中的数据 `oc_filter`
---
-
-
 -- --------------------------------------------------------
 
 --
@@ -1050,11 +946,6 @@ CREATE TABLE IF NOT EXISTS `oc_filter_description` (
   PRIMARY KEY (`filter_id`,`language_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
---
--- 转存表中的数据 `oc_filter_description`
---
-
-
 -- --------------------------------------------------------
 
 --
@@ -1066,11 +957,6 @@ CREATE TABLE IF NOT EXISTS `oc_filter_group` (
   `sort_order` int(3) NOT NULL,
   PRIMARY KEY (`filter_group_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
-
---
--- 转存表中的数据 `oc_filter_group`
---
-
 
 -- --------------------------------------------------------
 
@@ -1084,11 +970,6 @@ CREATE TABLE IF NOT EXISTS `oc_filter_group_description` (
   `name` varchar(64) NOT NULL,
   PRIMARY KEY (`filter_group_id`,`language_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-
---
--- 转存表中的数据 `oc_filter_group_description`
---
-
 
 -- --------------------------------------------------------
 
@@ -1665,11 +1546,6 @@ CREATE TABLE IF NOT EXISTS `oc_order_download` (
   PRIMARY KEY (`order_download_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
---
--- 转存表中的数据 `oc_order_download`
---
-
-
 -- --------------------------------------------------------
 
 --
@@ -1685,11 +1561,6 @@ CREATE TABLE IF NOT EXISTS `oc_order_field` (
   `sort_order` int(3) NOT NULL,
   PRIMARY KEY (`order_id`,`custom_field_id`,`custom_field_value_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-
---
--- 转存表中的数据 `oc_order_field`
---
-
 
 -- --------------------------------------------------------
 
@@ -1753,11 +1624,6 @@ CREATE TABLE IF NOT EXISTS `oc_order_fraud` (
   `date_added` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
   PRIMARY KEY (`order_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-
---
--- 转存表中的数据 `oc_order_fraud`
---
-
 
 -- --------------------------------------------------------
 
@@ -1972,11 +1838,6 @@ CREATE TABLE IF NOT EXISTS `oc_order_voucher` (
   PRIMARY KEY (`order_voucher_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
---
--- 转存表中的数据 `oc_order_voucher`
---
-
-
 -- --------------------------------------------------------
 
 --
@@ -2016,15 +1877,19 @@ CREATE TABLE IF NOT EXISTS `oc_product` (
   `date_modified` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
   `viewed` int(5) NOT NULL DEFAULT '0',
   PRIMARY KEY (`product_id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=52 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=57 ;
 
 --
 -- 转存表中的数据 `oc_product`
 --
 
 INSERT INTO `oc_product` (`product_id`, `model`, `sku`, `upc`, `ean`, `jan`, `isbn`, `mpn`, `location`, `quantity`, `stock_status_id`, `image`, `manufacturer_id`, `shipping`, `price`, `points`, `tax_class_id`, `date_available`, `weight`, `weight_class_id`, `length`, `width`, `height`, `length_class_id`, `subtract`, `minimum`, `sort_order`, `status`, `date_added`, `date_modified`, `viewed`) VALUES
-(50, 'S100', '', '', '', '', '', '', '', 1000, 7, '', 0, 1, '199.0000', 0, 0, '2013-12-17', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 1, 1, '2013-12-18 16:49:24', '2013-12-18 16:53:43', 0),
-(51, 'S101', '', '', '', '', '', '', '', 1000, 7, '', 0, 1, '199.0000', 0, 0, '2013-12-17', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 1, 1, '2013-12-18 16:50:43', '2013-12-18 16:53:26', 1);
+(50, 'S100', '', '', '', '', '', '', '', 1000, 7, 'data/product/6.png', 0, 1, '199.0000', 0, 0, '2013-12-17', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 1, 1, '2013-12-18 16:49:24', '2013-12-18 21:51:57', 1),
+(51, 'S101', '', '', '', '', '', '', '', 1000, 7, 'data/product/2.png', 0, 1, '199.0000', 0, 0, '2013-12-17', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 1, 1, '2013-12-18 16:50:43', '2013-12-18 21:27:25', 10),
+(52, 'S103', '', '', '', '', '', '', '', 1, 7, 'data/product/else1.png', 0, 1, '0.0000', 0, 0, '2013-12-17', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 1, 1, '2013-12-18 21:36:25', '0000-00-00 00:00:00', 2),
+(53, 'S104', '', '', '', '', '', '', '', 1, 7, 'data/product/else2.png', 0, 1, '0.0000', 0, 0, '2013-12-17', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 1, 1, '2013-12-18 21:38:25', '2013-12-18 21:54:22', 2),
+(55, 'S106', '', '', '', '', '', '', '', 1, 7, 'data/product/else4.png', 0, 1, '0.0000', 0, 0, '2013-12-17', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 1, 1, '2013-12-18 21:44:05', '2013-12-18 22:16:42', 2),
+(56, 'S107', '', '', '', '', '', '', '', 1, 7, 'data/product/else5.png', 0, 1, '0.0000', 0, 0, '2013-12-17', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 1, 1, '2013-12-18 22:03:46', '0000-00-00 00:00:00', 2);
 
 -- --------------------------------------------------------
 
@@ -2039,11 +1904,6 @@ CREATE TABLE IF NOT EXISTS `oc_product_attribute` (
   `text` text NOT NULL,
   PRIMARY KEY (`product_id`,`attribute_id`,`language_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-
---
--- 转存表中的数据 `oc_product_attribute`
---
-
 
 -- --------------------------------------------------------
 
@@ -2068,10 +1928,18 @@ CREATE TABLE IF NOT EXISTS `oc_product_description` (
 --
 
 INSERT INTO `oc_product_description` (`product_id`, `language_id`, `name`, `description`, `meta_description`, `meta_keyword`, `tag`) VALUES
+(50, 1, '生命方舟智能运动腕带', '&lt;p&gt;&amp;nbsp;&lt;/p&gt;\r\n\r\n&lt;p&gt;&amp;nbsp;&lt;/p&gt;\r\n\r\n&lt;p&gt;&lt;img alt=&quot;&quot; src=&quot;http://lifark.te168.cn/image/data/contentimg/1.png&quot; style=&quot;width: 960px; height: 537px;&quot; /&gt;&lt;img alt=&quot;&quot; src=&quot;http://lifark.te168.cn/image/data/contentimg/2.png&quot; style=&quot;width: 960px; height: 539px;&quot; /&gt;&lt;img alt=&quot;&quot; src=&quot;http://lifark.te168.cn/image/data/contentimg/3.png&quot; style=&quot;width: 960px; height: 538px;&quot; /&gt;&lt;img alt=&quot;&quot; src=&quot;http://lifark.te168.cn/image/data/contentimg/4.png&quot; style=&quot;width: 960px; height: 539px;&quot; /&gt;&lt;img alt=&quot;&quot; src=&quot;http://lifark.te168.cn/image/data/contentimg/5.png&quot; style=&quot;width: 960px; height: 541px;&quot; /&gt;&lt;img alt=&quot;&quot; src=&quot;http://lifark.te168.cn/image/data/contentimg/6.png&quot; style=&quot;width: 960px; height: 539px;&quot; /&gt;&lt;img alt=&quot;&quot; src=&quot;http://lifark.te168.cn/image/data/contentimg/7.png&quot; style=&quot;width: 960px; height: 540px;&quot; /&gt;&lt;/p&gt;\r\n\r\n&lt;p&gt;&amp;nbsp;&lt;/p&gt;\r\n', '', '', ''),
+(51, 1, '生命方舟智能健康腕带', '&lt;p&gt;&lt;img alt=&quot;&quot; src=&quot;http://lifark.te168.cn/image/data/contentimg/1.png&quot; style=&quot;width: 1306px; height: 731px;&quot; /&gt;&lt;img alt=&quot;&quot; src=&quot;http://lifark.te168.cn/image/data/contentimg/2.png&quot; style=&quot;width: 960px; height: 539px;&quot; /&gt;&lt;img alt=&quot;&quot; src=&quot;http://lifark.te168.cn/image/data/contentimg/3.png&quot; style=&quot;width: 960px; height: 538px;&quot; /&gt;&lt;img alt=&quot;&quot; src=&quot;http://lifark.te168.cn/image/data/contentimg/4.png&quot; style=&quot;width: 960px; height: 539px;&quot; /&gt;&lt;img alt=&quot;&quot; src=&quot;http://lifark.te168.cn/image/data/contentimg/5.png&quot; style=&quot;width: 960px; height: 541px;&quot; /&gt;&lt;img alt=&quot;&quot; src=&quot;http://lifark.te168.cn/image/data/contentimg/6.png&quot; style=&quot;width: 960px; height: 539px;&quot; /&gt;&lt;img alt=&quot;&quot; src=&quot;http://lifark.te168.cn/image/data/contentimg/7.png&quot; style=&quot;width: 960px; height: 540px;&quot; /&gt;&lt;/p&gt;\r\n', '', '', ''),
+(51, 2, '生命方舟智能健康腕带', '&lt;p&gt;&amp;nbsp;&lt;/p&gt;\r\n\r\n&lt;p&gt;&amp;nbsp;&lt;/p&gt;\r\n\r\n&lt;p&gt;&amp;nbsp;&lt;/p&gt;\r\n', '', '', ''),
 (50, 2, '生命方舟智能运动腕带', '&lt;p&gt;&amp;nbsp;&lt;/p&gt;\r\n\r\n&lt;p&gt;&amp;nbsp;&lt;/p&gt;\r\n\r\n&lt;p&gt;&amp;nbsp;&lt;/p&gt;\r\n\r\n&lt;p&gt;&amp;nbsp;&lt;/p&gt;\r\n\r\n&lt;p&gt;&amp;nbsp;&lt;/p&gt;\r\n', '', '', ''),
-(51, 1, '生命方舟智能健康腕带', '&lt;p&gt;&amp;nbsp;&lt;/p&gt;\r\n\r\n&lt;p&gt;&amp;nbsp;&lt;/p&gt;\r\n\r\n&lt;p&gt;&amp;nbsp;&lt;/p&gt;\r\n\r\n&lt;p&gt;&amp;nbsp;&lt;/p&gt;\r\n\r\n&lt;p&gt;&amp;nbsp;&lt;/p&gt;\r\n', '', '', ''),
-(50, 1, '生命方舟智能运动腕带', '&lt;p&gt;&amp;nbsp;&lt;/p&gt;\r\n\r\n&lt;p&gt;&amp;nbsp;&lt;/p&gt;\r\n\r\n&lt;p&gt;&amp;nbsp;&lt;/p&gt;\r\n\r\n&lt;p&gt;&amp;nbsp;&lt;/p&gt;\r\n', '', '', ''),
-(51, 2, '生命方舟智能健康腕带', '&lt;p&gt;&amp;nbsp;\r\n&lt;p&gt;&amp;nbsp;&lt;/p&gt;\r\n&lt;/p&gt;\r\n', '', '', '');
+(52, 1, '生命方舟卡路里健康腕带', '&lt;div style=&quot;box-sizing: border-box; font-family: ''Hiragino Sans GB'', ''Microsoft YaHei'', Helvetica, sans-serif; font-size: 14px; line-height: 20px;&quot;&gt;&lt;span style=&quot;box-sizing: border-box;&quot;&gt;新产品的设计并没有偏离其前身(Fitbit Flex)太远，但是配备了高度计和更好的显示屏。&lt;/span&gt;&lt;span style=&quot;box-sizing: border-box;&quot;&gt;Fitbit Force用一块显示屏来取代Flex上的5颗LED指示灯，即使事先没有和智能手机或电脑同步，它也能够显示范围更广的信息。外媒The Verge的报道称，Force能够显示时间和计算每天爬的楼层(阶梯)数。&lt;/span&gt;&lt;/div&gt;\r\n\r\n&lt;div style=&quot;box-sizing: border-box;&quot;&gt;\r\n&lt;p style=&quot;box-sizing: border-box; margin: 0px 0px 10px;&quot;&gt;&lt;span style=&quot;box-sizing: border-box; font-family: ''Hiragino Sans GB'', ''Microsoft YaHei'', Helvetica, sans-serif; font-size: 14px; line-height: 20px;&quot;&gt;新款Force腕带外观与公司的上一款产品Fitbit Flex相似。增加了一个OLED显示屏用以显示时间、步数，里程。像Flex腕带一样，配合配套的裤夹Zip和One追踪器，Force可以记录步数、里程、卡路里、楼梯台阶数甚至睡眠时间。&lt;/span&gt;&lt;/p&gt;\r\n\r\n&lt;p style=&quot;box-sizing: border-box; margin: 0px 0px 10px;&quot;&gt;&lt;span style=&quot;box-sizing: border-box; font-family: ''Hiragino Sans GB'', ''Microsoft YaHei'', Helvetica, sans-serif; font-size: 14px; line-height: 20px;&quot;&gt;大部分信息都能显示在自带的显示屏上，你也可以通过蓝牙4.0，使用Fitbit应用查看。&lt;/span&gt;&lt;/p&gt;\r\n\r\n&lt;p style=&quot;box-sizing: border-box; margin: 0px 0px 10px;&quot;&gt;&lt;span style=&quot;box-sizing: border-box; font-family: ''Hiragino Sans GB'', ''Microsoft YaHei'', Helvetica, sans-serif; font-size: 14px; line-height: 20px;&quot;&gt;不光如此，Fitbit更充分地使用了蓝牙技术，这款设备现在能发送部分手机信息到腕带上。配合iOS7系统的iPhone，你能在腕带屏幕上看见来电提醒。Android手机暂时没有这个功能。不过把腕带靠近配备了NFC的Android手机能自动启动Fitbit应用。&lt;/span&gt;&lt;/p&gt;\r\n\r\n&lt;p style=&quot;box-sizing: border-box; margin: 0px 0px 10px;&quot;&gt;&lt;span style=&quot;box-sizing: border-box; font-family: ''Hiragino Sans GB'', ''Microsoft YaHei'', Helvetica, sans-serif; font-size: 14px; line-height: 20px;&quot;&gt;Force连接了健身设备与智能手表的巨大市场，包括Fitbit自己的一系列产品在内。Fitbit声称：“一个尺寸不能满足所有。”其他很多公司，包括耐克、Jawbone和三星都会同意这个观点。耐克的Fuelband已经是最受欢迎的追踪器之一。Jawbone的Up也是非常时髦的选择。&lt;/span&gt;&lt;/p&gt;\r\n\r\n&lt;p style=&quot;box-sizing: border-box; margin: 0px 0px 10px;&quot;&gt;&lt;span style=&quot;box-sizing: border-box; font-family: ''Hiragino Sans GB'', ''Microsoft YaHei'', Helvetica, sans-serif; font-size: 14px; line-height: 20px;&quot;&gt;但是考虑到我们对于Fitbit Flex只能通过手机看数据的不满，Force可能是现在最好的腕带了。&lt;/span&gt;&lt;/p&gt;\r\n&lt;/div&gt;\r\n', '', '', ''),
+(52, 2, 'Fitbit Force', '', '', '', ''),
+(53, 2, 'Anki Drive', '', '', '', ''),
+(56, 1, '耐克运动手带', '&lt;ol style=&quot;box-sizing: border-box; margin: 0px; list-style-position: inside; list-style-image: initial; padding-left: 0px; font-family: ''Hiragino Sans GB'', ''Microsoft YaHei'', Helvetica, sans-serif; font-size: 14px; line-height: 20px;&quot;&gt;\r\n	&lt;li style=&quot;box-sizing: border-box;&quot;&gt;Nike+ FuelBand SE&amp;nbsp;&lt;/li&gt;\r\n	&lt;li style=&quot;box-sizing: border-box;&quot;&gt;支持 iPhone 5s 的 M7 芯片&lt;/li&gt;\r\n	&lt;li style=&quot;box-sizing: border-box;&quot;&gt;增加定时活动提醒&lt;/li&gt;\r\n	&lt;li style=&quot;box-sizing: border-box;&quot;&gt;支持蓝牙 4.0&lt;/li&gt;\r\n	&lt;li style=&quot;box-sizing: border-box;&quot;&gt;增加时间显示&lt;/li&gt;\r\n	&lt;li style=&quot;box-sizing: border-box;&quot;&gt;支持新的 Nike+ Moves 应用&lt;/li&gt;\r\n	&lt;li style=&quot;box-sizing: border-box;&quot;&gt;优化运动记录，自动过滤非运动的行为信息，防止作弊。&lt;/li&gt;\r\n&lt;/ol&gt;\r\n\r\n&lt;div style=&quot;box-sizing: border-box; font-family: ''Hiragino Sans GB'', ''Microsoft YaHei'', Helvetica, sans-serif; font-size: 14px; line-height: 20px;&quot;&gt;&amp;nbsp;&lt;/div&gt;\r\n\r\n&lt;div style=&quot;box-sizing: border-box; font-family: ''Hiragino Sans GB'', ''Microsoft YaHei'', Helvetica, sans-serif; font-size: 14px; line-height: 20px;&quot;&gt;-------------------------分割线-------------------------&lt;/div&gt;\r\n\r\n&lt;div style=&quot;box-sizing: border-box; font-family: ''Hiragino Sans GB'', ''Microsoft YaHei'', Helvetica, sans-serif; font-size: 14px; line-height: 20px;&quot;&gt;虽然是小改款，但是相比老款来说还是实用很多。&lt;/div&gt;\r\n\r\n&lt;div style=&quot;box-sizing: border-box; font-family: ''Hiragino Sans GB'', ''Microsoft YaHei'', Helvetica, sans-serif; font-size: 14px; line-height: 20px;&quot;&gt;售价：149刀&lt;/div&gt;\r\n\r\n&lt;div style=&quot;box-sizing: border-box; font-family: ''Hiragino Sans GB'', ''Microsoft YaHei'', Helvetica, sans-serif; font-size: 14px; line-height: 20px;&quot;&gt;目前是 iOS 独享 App，不支持 Android 和 WP8 。&lt;/div&gt;\r\n', '', '', ''),
+(56, 2, 'Nike+ FuelBand SE', '', '', '', ''),
+(55, 2, 'Gaming Eyewear by Allure Eyewear', '', '', '', ''),
+(55, 1, '防疲劳眼镜', '&lt;p&gt;&lt;span style=&quot;font-family: ''Hiragino Sans GB'', ''Microsoft YaHei'', Helvetica, sans-serif; font-size: 14px; line-height: 20px;&quot;&gt;框架版 Allure Eyewear 终于到货了。要提醒一下各位之前下单预订了的是，Knewone 拿到的这一批 Gaming Eyewear 和之前首页放上的产品图有差异。这一批眼镜的型号是 CODG4-K MATTE BLACK 。试用了半天，整体感觉相当不错，可以给 4.5 星。惯例，先上图：关于做工：除了镜片，眼镜整个都是塑料材质的，整体重量很合适。眼镜架部分有橡胶包裹，手感不错。一些使用体验：因为没有像近视眼镜一样的鼻托，直接戴着时主要靠两侧夹紧。因为镜面是弧形的，戴上时镜片离眼球很近（你想贴到睫毛都是可能的），所以两边夹住反而会让你觉得很有紧实感。应该很类似戴墨镜的感觉。总之，戴感舒适。我给它好评最重要的原因是戴上后对屏幕光线的柔和效果感觉非常舒服，比之前用夹片款的效果要好。要说明一下的是，因为我很显然是近视啦，体验的时候都是像看 3D 电影一样，戴两个眼镜…虽然这款眼镜有 +0.20 的屈光度（即 25 度左右），但如果你是中高度近视者，必须佩戴近视眼镜的话，我建议你还是放弃对它的念想吧。 &amp;nbsp;戴上后会明显觉得屏幕光线变「柔和」了，而非变「黄」了。因为使用场景很明确，跟之前的预想也...&lt;/span&gt;&lt;/p&gt;\r\n', '', '', ''),
+(53, 1, '安科智能四驱车', '&lt;p style=&quot;box-sizing: border-box; margin: 0px 0px 10px; font-family: ''Hiragino Sans GB'', ''Microsoft YaHei'', Helvetica, sans-serif; font-size: 14px; line-height: 20px;&quot;&gt;&lt;span style=&quot;box-sizing: border-box;&quot;&gt;还记得数月前苹果 WWDC 演讲开始前展示的三次元赛车游戏 Anki Drive 吗？将 iPhone 用作大脑的自指挥智能四驱车。&lt;/span&gt;&lt;/p&gt;\r\n\r\n&lt;p style=&quot;box-sizing: border-box; margin: 0px 0px 10px; font-family: ''Hiragino Sans GB'', ''Microsoft YaHei'', Helvetica, sans-serif; font-size: 14px; line-height: 20px;&quot;&gt;&lt;span style=&quot;box-sizing: border-box;&quot;&gt;&amp;nbsp;Anki Drive 在外观上和四驱车区别不大，只是没有了四周的转向导轮，赛车内部搭载了光学传感器、AI 组件和一个数据处理器，但具体硬件方面的细节现在还不得而知。这些 AI 方面的优秀性能使得其能以每秒 500 次的速率实时查看更新自己和其他玩具赛车在跑道上的位置，并传输到对应玩家的 iPhone 上。&amp;nbsp;&lt;/span&gt;&lt;/p&gt;\r\n\r\n&lt;p style=&quot;box-sizing: border-box; margin: 0px 0px 10px; font-family: ''Hiragino Sans GB'', ''Microsoft YaHei'', Helvetica, sans-serif; font-size: 14px; line-height: 20px;&quot;&gt;&lt;span style=&quot;box-sizing: border-box;&quot;&gt;Anki Drive 可以不用玩家的操作自己自动竞赛，但真正的乐趣还是在于亲手操作的体验。在跑道上 Anki Drive 通过自己的 AI 会自动识别跑道和其他赛车，玩家使用 iPhone 控制的是赛车的速度和跑道上赛车的走向位置，比如内道超车、侧面把其他车挤出跑道之类的操作都可以轻松完成，由于 Anki Drive 能够在跑道上自动导向，所以玩家们只要想着该如何废掉其他赛车就好。&amp;nbsp;&lt;/span&gt;&lt;/p&gt;\r\n\r\n&lt;p style=&quot;box-sizing: border-box; margin: 0px 0px 10px; font-family: ''Hiragino Sans GB'', ''Microsoft YaHei'', Helvetica, sans-serif; font-size: 14px; line-height: 20px;&quot;&gt;&lt;span style=&quot;box-sizing: border-box;&quot;&gt;另外一个特色，玩具赛车还配备了电子武器，比如机关枪、轨炮和激光炮等，也是由玩家的 iPhone 操作，如果一辆车被击中的次数太多，就会暂时停下来。每辆车都有一个武器和不同的特殊能力，两者都能够在胜出后升级，并且升级是永久性的，所有资料都储存在赛车内置的存储器中。&lt;/span&gt;&lt;/p&gt;\r\n', '', '', '');
 
 -- --------------------------------------------------------
 
@@ -2092,11 +1960,6 @@ CREATE TABLE IF NOT EXISTS `oc_product_discount` (
   KEY `product_id` (`product_id`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=447 ;
 
---
--- 转存表中的数据 `oc_product_discount`
---
-
-
 -- --------------------------------------------------------
 
 --
@@ -2108,11 +1971,6 @@ CREATE TABLE IF NOT EXISTS `oc_product_filter` (
   `filter_id` int(11) NOT NULL,
   PRIMARY KEY (`product_id`,`filter_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-
---
--- 转存表中的数据 `oc_product_filter`
---
-
 
 -- --------------------------------------------------------
 
@@ -2126,12 +1984,27 @@ CREATE TABLE IF NOT EXISTS `oc_product_image` (
   `image` varchar(255) DEFAULT NULL,
   `sort_order` int(3) NOT NULL DEFAULT '0',
   PRIMARY KEY (`product_image_id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2362 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2384 ;
 
 --
 -- 转存表中的数据 `oc_product_image`
 --
 
+INSERT INTO `oc_product_image` (`product_image_id`, `product_id`, `image`, `sort_order`) VALUES
+(2369, 51, 'data/product/3.png', 0),
+(2368, 51, 'data/product/2.png', 0),
+(2370, 50, 'data/product/4.png', 0),
+(2371, 50, 'data/product/6.png', 0),
+(2372, 50, 'data/product/6.png', 0),
+(2373, 50, 'data/product/3.png', 0),
+(2374, 53, 'data/product/else1-1.png', 0),
+(2375, 53, 'data/product/else1-2.png', 0),
+(2376, 53, 'data/product/else1-3.png', 0),
+(2383, 55, 'data/product/else4.png', 0),
+(2379, 56, 'data/product/else5.png', 0),
+(2380, 56, 'data/product/else5-1.png', 0),
+(2381, 56, 'data/product/else5-2.png', 0),
+(2382, 56, 'data/product/else5-3.png', 0);
 
 -- --------------------------------------------------------
 
@@ -2147,11 +2020,6 @@ CREATE TABLE IF NOT EXISTS `oc_product_option` (
   `required` tinyint(1) NOT NULL,
   PRIMARY KEY (`product_option_id`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=228 ;
-
---
--- 转存表中的数据 `oc_product_option`
---
-
 
 -- --------------------------------------------------------
 
@@ -2176,11 +2044,6 @@ CREATE TABLE IF NOT EXISTS `oc_product_option_value` (
   PRIMARY KEY (`product_option_value_id`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=19 ;
 
---
--- 转存表中的数据 `oc_product_option_value`
---
-
-
 -- --------------------------------------------------------
 
 --
@@ -2192,11 +2055,6 @@ CREATE TABLE IF NOT EXISTS `oc_product_related` (
   `related_id` int(11) NOT NULL,
   PRIMARY KEY (`product_id`,`related_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-
---
--- 转存表中的数据 `oc_product_related`
---
-
 
 -- --------------------------------------------------------
 
@@ -2210,15 +2068,19 @@ CREATE TABLE IF NOT EXISTS `oc_product_reward` (
   `customer_group_id` int(11) NOT NULL DEFAULT '0',
   `points` int(8) NOT NULL DEFAULT '0',
   PRIMARY KEY (`product_reward_id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=554 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=573 ;
 
 --
 -- 转存表中的数据 `oc_product_reward`
 --
 
 INSERT INTO `oc_product_reward` (`product_reward_id`, `product_id`, `customer_group_id`, `points`) VALUES
-(552, 51, 1, 0),
-(553, 50, 1, 0);
+(557, 51, 1, 0),
+(568, 50, 1, 0),
+(560, 52, 1, 0),
+(569, 53, 1, 0),
+(571, 56, 1, 0),
+(572, 55, 1, 0);
 
 -- --------------------------------------------------------
 
@@ -2237,11 +2099,6 @@ CREATE TABLE IF NOT EXISTS `oc_product_special` (
   PRIMARY KEY (`product_special_id`),
   KEY `product_id` (`product_id`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=442 ;
-
---
--- 转存表中的数据 `oc_product_special`
---
-
 
 -- --------------------------------------------------------
 
@@ -2263,7 +2120,13 @@ INSERT INTO `oc_product_to_category` (`product_id`, `category_id`) VALUES
 (50, 59),
 (50, 60),
 (51, 59),
-(51, 60);
+(51, 60),
+(52, 59),
+(52, 61),
+(53, 59),
+(53, 61),
+(55, 59),
+(55, 61);
 
 -- --------------------------------------------------------
 
@@ -2277,11 +2140,6 @@ CREATE TABLE IF NOT EXISTS `oc_product_to_download` (
   PRIMARY KEY (`product_id`,`download_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
---
--- 转存表中的数据 `oc_product_to_download`
---
-
-
 -- --------------------------------------------------------
 
 --
@@ -2294,11 +2152,6 @@ CREATE TABLE IF NOT EXISTS `oc_product_to_layout` (
   `layout_id` int(11) NOT NULL,
   PRIMARY KEY (`product_id`,`store_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-
---
--- 转存表中的数据 `oc_product_to_layout`
---
-
 
 -- --------------------------------------------------------
 
@@ -2318,7 +2171,11 @@ CREATE TABLE IF NOT EXISTS `oc_product_to_store` (
 
 INSERT INTO `oc_product_to_store` (`product_id`, `store_id`) VALUES
 (50, 0),
-(51, 0);
+(51, 0),
+(52, 0),
+(53, 0),
+(55, 0),
+(56, 0);
 
 -- --------------------------------------------------------
 
@@ -2348,11 +2205,6 @@ CREATE TABLE IF NOT EXISTS `oc_return` (
   `date_modified` datetime NOT NULL,
   PRIMARY KEY (`return_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
-
---
--- 转存表中的数据 `oc_return`
---
-
 
 -- --------------------------------------------------------
 
@@ -2394,11 +2246,6 @@ CREATE TABLE IF NOT EXISTS `oc_return_history` (
   `date_added` datetime NOT NULL,
   PRIMARY KEY (`return_history_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
-
---
--- 转存表中的数据 `oc_return_history`
---
-
 
 -- --------------------------------------------------------
 
@@ -2474,11 +2321,6 @@ CREATE TABLE IF NOT EXISTS `oc_review` (
   KEY `product_id` (`product_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
---
--- 转存表中的数据 `oc_review`
---
-
-
 -- --------------------------------------------------------
 
 --
@@ -2493,7 +2335,7 @@ CREATE TABLE IF NOT EXISTS `oc_setting` (
   `value` text NOT NULL,
   `serialized` tinyint(1) NOT NULL,
   PRIMARY KEY (`setting_id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=1947 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=1953 ;
 
 --
 -- 转存表中的数据 `oc_setting`
@@ -2519,8 +2361,9 @@ INSERT INTO `oc_setting` (`setting_id`, `store_id`, `group`, `key`, `value`, `se
 (469, 0, 'flat', 'flat_geo_zone_id', '0', 0),
 (468, 0, 'flat', 'flat_tax_class_id', '0', 0),
 (1517, 0, 'carousel', 'carousel_module', 'a:1:{i:0;a:9:{s:9:"banner_id";s:1:"8";s:5:"limit";s:1:"5";s:6:"scroll";s:1:"3";s:5:"width";s:3:"160";s:6:"height";s:3:"160";s:9:"layout_id";s:1:"1";s:8:"position";s:14:"content_bottom";s:6:"status";s:1:"0";s:10:"sort_order";s:2:"-1";}}', 1),
-(1533, 0, 'featured', 'featured_product', '43,40,42,46,47,28', 0),
-(1534, 0, 'featured', 'featured_module', 'a:1:{i:0;a:7:{s:5:"limit";s:1:"6";s:11:"image_width";s:3:"200";s:12:"image_height";s:3:"200";s:9:"layout_id";s:1:"1";s:8:"position";s:11:"content_top";s:6:"status";s:1:"1";s:10:"sort_order";s:1:"2";}}', 1),
+(1950, 0, 'featured', 'product', '生命方舟', 0),
+(1951, 0, 'featured', 'featured_product', '50,51,56,53,55,52', 0),
+(1952, 0, 'featured', 'featured_module', 'a:1:{i:0;a:7:{s:5:"limit";s:1:"6";s:11:"image_width";s:3:"200";s:12:"image_height";s:3:"200";s:9:"layout_id";s:1:"1";s:8:"position";s:11:"content_top";s:6:"status";s:1:"1";s:10:"sort_order";s:1:"2";}}', 1),
 (467, 0, 'flat', 'flat_cost', '5', 0),
 (1944, 0, 'config', 'config_error_log', '0', 0),
 (1943, 0, 'config', 'config_error_display', '1', 0),
@@ -2640,8 +2483,7 @@ INSERT INTO `oc_setting` (`setting_id`, `store_id`, `group`, `key`, `value`, `se
 (1845, 0, 'config', 'config_owner', '生命方舟', 0),
 (1844, 0, 'config', 'config_name', '生命方舟', 0),
 (477, 0, 'alipay', 'alipay_status', '1', 0),
-(478, 0, 'alipay', 'alipay_sort_order', '1', 0),
-(1532, 0, 'featured', 'product', '', 0);
+(478, 0, 'alipay', 'alipay_sort_order', '1', 0);
 
 -- --------------------------------------------------------
 
@@ -2683,11 +2525,6 @@ CREATE TABLE IF NOT EXISTS `oc_store` (
   `ssl` varchar(255) NOT NULL,
   PRIMARY KEY (`store_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
-
---
--- 转存表中的数据 `oc_store`
---
-
 
 -- --------------------------------------------------------
 
@@ -2830,7 +2667,7 @@ CREATE TABLE IF NOT EXISTS `oc_user` (
 --
 
 INSERT INTO `oc_user` (`user_id`, `user_group_id`, `username`, `password`, `salt`, `firstname`, `lastname`, `email`, `code`, `ip`, `status`, `date_added`) VALUES
-(1, 1, 'admin', '2755118caf3b9bef8eaf23ef6c12e526586b4042', '1f3b75c57', '', '', 'wangte168@sina.com', '', '202.204.81.57', 1, '2013-12-03 14:57:16');
+(1, 1, 'admin', '2755118caf3b9bef8eaf23ef6c12e526586b4042', '1f3b75c57', '', '', 'wangte168@sina.com', '', '127.0.0.1', 1, '2013-12-03 14:57:16');
 
 -- --------------------------------------------------------
 
@@ -2875,11 +2712,6 @@ CREATE TABLE IF NOT EXISTS `oc_voucher` (
   PRIMARY KEY (`voucher_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
---
--- 转存表中的数据 `oc_voucher`
---
-
-
 -- --------------------------------------------------------
 
 --
@@ -2894,11 +2726,6 @@ CREATE TABLE IF NOT EXISTS `oc_voucher_history` (
   `date_added` datetime NOT NULL,
   PRIMARY KEY (`voucher_history_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
-
---
--- 转存表中的数据 `oc_voucher_history`
---
-
 
 -- --------------------------------------------------------
 
@@ -3071,3 +2898,7 @@ CREATE TABLE IF NOT EXISTS `oc_zone_to_geo_zone` (
 INSERT INTO `oc_zone_to_geo_zone` (`zone_to_geo_zone_id`, `country_id`, `zone_id`, `geo_zone_id`, `date_added`, `date_modified`) VALUES
 (57, 222, 0, 3, '2010-02-26 22:33:24', '0000-00-00 00:00:00'),
 (65, 222, 0, 4, '2010-12-15 15:18:13', '0000-00-00 00:00:00');
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
