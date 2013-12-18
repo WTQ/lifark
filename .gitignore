@@ -7,3 +7,4 @@ system/cache/cache*
 /config.php
 admin/config.php
 system/logs/
+image/cache/
