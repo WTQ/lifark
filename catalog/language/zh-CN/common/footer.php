@@ -15,3 +15,8 @@ $_['text_order']        = '历史订单';
 $_['text_wishlist']     = '收藏列表';
 $_['text_newsletter']   = '订阅咨询';
 $_['text_powered']      = '技术支持 <a href="http://www.opencart.com">OpenCart</a><br /> %s &copy; %s';
+$_['text_sinaweblog']    = '新浪微博';
+$_['text_tecentweblog'] = '腾讯微博';
+$_['text_renren']       = '人人网';
+
+

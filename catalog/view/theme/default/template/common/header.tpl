@@ -54,7 +54,7 @@ $('body').prepend('<iframe src="<?php echo $store; ?>" style="display: none;"></
         <div class="top_link">
             <ul>
                 <?php echo $language; ?>
-                <li><a href="<?php echo $shopping_cart; ?>">购物车 <?php echo $cart; ?> 件</a></li>
+                <li><a href="<?php echo $shopping_cart; ?>"><?php echo $text_shopping_cart; ?> <?php echo $cart; ?> <?php echo $text_piece;?></a></li>               
                 <?php if (!$logged) { ?>
                 <?php echo $text_welcome; ?>
                 <?php } else { ?>
@@ -71,7 +71,7 @@ $('body').prepend('<iframe src="<?php echo $store; ?>" style="display: none;"></
           <div id="logo"><a href="<?php echo $home; ?>"><img src="<?php echo $logo; ?>" title="<?php echo $name; ?>" alt="<?php echo $name; ?>" /></a></div>
           <?php } ?>
           <?php echo $currency; ?>
-          <div class="links"><a href="<?php echo $home; ?>"><?php echo $text_home; ?></a><a href="index.php?route=product/category&path=20">在线商城</a><a href="<?php echo $wishlist; ?>" id="wishlist-total"><?php echo $text_wishlist; ?></a><a href="<?php echo $account; ?>"><?php echo $text_account; ?></a><a href="<?php echo $shopping_cart; ?>"><?php echo $text_shopping_cart; ?></a><a href="<?php echo $checkout; ?>"><?php echo $text_checkout; ?></a></div>
+          <div class="links"><a href="<?php echo $home; ?>"><?php echo $text_home; ?></a><a href="index.php?route=product/category&path=20"><?php echo $text_onlinecart; ?></a><a href="<?php echo $wishlist; ?>" id="wishlist-total"><?php echo $text_wishlist; ?></a><a href="<?php echo $account; ?>"><?php echo $text_account; ?></a><a href="<?php echo $shopping_cart; ?>"><?php echo $text_shopping_cart; ?></a><a href="<?php echo $checkout; ?>"><?php echo $text_checkout; ?></a></div>
         </div>
     </div>
 <?php if ($categories) { ?>

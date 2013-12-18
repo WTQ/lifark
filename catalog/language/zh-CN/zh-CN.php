@@ -53,6 +53,8 @@ $_['button_upload']         = '上传文件';
 $_['button_reward']         = '使用积分';
 $_['button_quote']          = '询价';
 
+
+
 // Error
 $_['error_upload_1']        = '警告: 上传文件大小超过php.ini的允许范围！';
 $_['error_upload_2']        = '警告: 上传文件大小超过允许范围！';
