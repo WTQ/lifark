@@ -1744,7 +1744,7 @@ ul.box-filter > li ul {
 /* add by yankun */
 #app {
 	width: 980px;
-	height: 500px;
+	height: 450px;
 	margin-left: auto;
 	margin-right: auto;
 }
@@ -1758,9 +1758,10 @@ ul.box-filter > li ul {
 }
 
 #android {
+    background: #FFF;
 	float: left;
 	width: 50%;
-	height: 500px;
+	height: 320px;
 	background-image: url(../../../../../image/android.png);
 	background-repeat: no-repeat;
 	background-position: 30px 30px;
@@ -1769,25 +1770,26 @@ ul.box-filter > li ul {
 .apptext {
 	font-size: 18px;
 	width: 200px;
-	margin-left: 210px;
+	margin-left: 240px;
 	margin-top: 60px;
 	font-weight: 600;
 	color: #333;	
 }
 
 .appbutton {
-	margin-left: 200px;
+	margin-left: 230px;
 	margin-top: 100px;
 }
 
 .appimg {
-	margin-left: 240px;
+	margin-left: 270px;
 	margin-top: 20px;	
 }
 
 #iphone {
+    background: #FFF;
 	width: 50%;
-	height: 500px;
+	height: 320px;
 	background-image: url(../../../../../image/iphone.png);
 	background-repeat: no-repeat;
 	float: left;
@@ -1795,7 +1797,7 @@ ul.box-filter > li ul {
 }
 
 .underimg {
-	margin-left: 256px;
+	margin-left: 286px;
 	width: 100px;
 	margin-top:0px;
 	font-size: 10px;
