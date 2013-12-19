@@ -1653,6 +1653,9 @@ ul.box-filter > li ul {
 
 
 /* add by wangte */
+img {
+    max-width: 100% !important;
+}
 .container {
     width: 980px;
     margin-left: auto;
