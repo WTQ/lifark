@@ -569,7 +569,7 @@ a.button, input.button {
 	font-family: Arial, Helvetica, sans-serif;
 	font-size: 12px;
 	font-weight: bold;
-	background: url('../image/button.png') repeat-x;
+	background: url('../image/button1.png') repeat-x;
 	-webkit-border-radius: 7px 7px 7px 7px;
 	-moz-border-radius: 7px 7px 7px 7px;
 	-khtml-border-radius: 7px 7px 7px 7px;
@@ -586,7 +586,7 @@ a.button {
 input.button {
 	margin: 0;
 	border: 0;
-	height: 24px;
+	height: 32px;
 	padding: 0px 12px 0px 12px;
 }
 a.button:hover, input.button:hover {
@@ -613,8 +613,8 @@ a.button:hover, input.button:hover {
 	margin-right: auto;
 }
 .htabs {
-	height: 30px;
-	line-height: 16px;
+	height: 40px;
+	line-height: 40px;
 	border-bottom: 1px solid #DDDDDD;
 }
 .htabs a {
@@ -622,25 +622,25 @@ a.button:hover, input.button:hover {
 	border-left: 1px solid #DDDDDD;
 	border-right: 1px solid #DDDDDD;
 	background: #FFFFFF url('../image/tab.png') repeat-x;
-	padding: 7px 15px 6px 15px;
+	padding: 0px 15px 0px 15px;
 	float: left;
 	font-family: Arial, Helvetica, sans-serif;
-	font-size: 13px;
+	font-size: 14px;
 	font-weight: bold;
 	text-align: center;
 	text-decoration: none;
-	color: #000000;
+	color:#09F;
 	margin-right: 2px;
 	display: none;
 }
 .htabs a.selected {
-	padding-bottom: 7px;
+	padding-bottom: 0px;
 	background: #FFFFFF;
 }
 .tab-content {
-	border-left: 1px solid #DDDDDD;
-	border-right: 1px solid #DDDDDD;
-	border-bottom: 1px solid #DDDDDD;
+	border-left:none;
+	border-right: none;
+	border-bottom: none;
 	padding: 10px;
 	margin-bottom: 20px;
 	z-index: 2;
@@ -1654,8 +1654,20 @@ ul.box-filter > li ul {
 
 /* add by wangte */
 img {
-    max-width: 100% !important;
+    max-width:100% !important;
 }
+
+#captcha {
+	float:left;
+	margin-left: 3px;
+	margin-bottom: 2px;
+}
+
+#captchatext {
+	float:left;
+	margin-top: 5px;
+}
+
 .container {
     width: 980px;
     margin-left: auto;
