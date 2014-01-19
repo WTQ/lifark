@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 3.5.1
+-- version 3.3.9
 -- http://www.phpmyadmin.net
 --
 -- 主机: localhost
--- 生成日期: 2013 年 12 月 18 日 14:45
--- 服务器版本: 5.5.24-log
--- PHP 版本: 5.3.13
+-- 生成日期: 2014 年 01 月 19 日 14:52
+-- 服务器版本: 5.1.53
+-- PHP 版本: 5.3.4
 
 SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
-SET time_zone = "+00:00";
 
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
@@ -42,7 +41,7 @@ CREATE TABLE IF NOT EXISTS `oc_address` (
   `zone_id` int(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`address_id`),
   KEY `customer_id` (`customer_id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=8 ;
 
 --
 -- 转存表中的数据 `oc_address`
@@ -51,7 +50,11 @@ CREATE TABLE IF NOT EXISTS `oc_address` (
 INSERT INTO `oc_address` (`address_id`, `customer_id`, `firstname`, `lastname`, `company`, `company_id`, `tax_id`, `address_1`, `address_2`, `city`, `postcode`, `country_id`, `zone_id`) VALUES
 (1, 1, '王格', '', '', '', '', '中关村南大街5号', '', '北京市', '100081', 44, 685),
 (2, 2, '王特', '', '', '', '', '阿斯蒂芬', '', '阿斯蒂芬', '阿斯蒂芬', 44, 685),
-(3, 3, '测试', '', '', '', '', '中关村南大街5号', '', '海淀区', '100081', 44, 685);
+(3, 3, '测试', '', '', '', '', '中关村南大街5号', '', '海淀区', '100081', 44, 685),
+(4, 4, '赵洲洋', '', '', '', '', '北京清华大学', '15120074119', '北京', '100084', 44, 685),
+(5, 4, '赵洲洋', '', '', '', '', '北京清华大学', '15120074119', '北京', '100084', 44, 685),
+(6, 1, 'aaa', '', '', '', '', 'bbasdfasdfasdf', '123', '123', '123', 44, 713),
+(7, 1, 'aaa', '', '', '', '', 'bbasdfasdfasdf', '123', '123', '123', 44, 713);
 
 -- --------------------------------------------------------
 
@@ -94,6 +97,11 @@ CREATE TABLE IF NOT EXISTS `oc_affiliate` (
   PRIMARY KEY (`affiliate_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
+--
+-- 转存表中的数据 `oc_affiliate`
+--
+
+
 -- --------------------------------------------------------
 
 --
@@ -109,6 +117,11 @@ CREATE TABLE IF NOT EXISTS `oc_affiliate_transaction` (
   `date_added` datetime NOT NULL,
   PRIMARY KEY (`affiliate_transaction_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+
+--
+-- 转存表中的数据 `oc_affiliate_transaction`
+--
+
 
 -- --------------------------------------------------------
 
@@ -264,15 +277,13 @@ CREATE TABLE IF NOT EXISTS `oc_banner_image` (
   `link` varchar(255) NOT NULL,
   `image` varchar(255) NOT NULL,
   PRIMARY KEY (`banner_image_id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=102 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=112 ;
 
 --
 -- 转存表中的数据 `oc_banner_image`
 --
 
 INSERT INTO `oc_banner_image` (`banner_image_id`, `banner_id`, `link`, `image`) VALUES
-(101, 7, 'index.php', 'data/banner/11.png'),
-(100, 7, 'index.php', 'data/banner/88.png'),
 (77, 6, 'index.php?route=product/manufacturer/info&amp;manufacturer_id=7', 'data/demo/hp_banner.jpg'),
 (75, 8, 'index.php?route=product/manufacturer/info&amp;manufacturer_id=5', 'data/demo/htc_logo.jpg'),
 (73, 8, 'index.php?route=product/manufacturer/info&amp;manufacturer_id=8', 'data/demo/apple_logo.jpg'),
@@ -280,9 +291,11 @@ INSERT INTO `oc_banner_image` (`banner_image_id`, `banner_id`, `link`, `image`) 
 (71, 8, 'index.php?route=product/manufacturer/info&amp;manufacturer_id=10', 'data/demo/sony_logo.jpg'),
 (72, 8, 'index.php?route=product/manufacturer/info&amp;manufacturer_id=6', 'data/demo/palm_logo.jpg'),
 (76, 8, 'index.php?route=product/manufacturer/info&amp;manufacturer_id=7', 'data/demo/hp_logo.jpg'),
-(99, 7, 'index.php?route=product/product&amp;path=57&amp;product_id=49', 'data/banner/55.png'),
-(98, 7, 'index.php', 'data/banner/99.png'),
-(97, 7, 'index.php', 'data/banner/77.png');
+(109, 7, 'index.php?route=product/product&amp;product_id=50', 'data/banner/11.png'),
+(110, 7, 'index.php?route=product/product&amp;product_id=52', 'data/banner/99.png'),
+(111, 7, 'index.php?route=product/product&amp;product_id=55', 'data/banner/77.png'),
+(108, 7, 'index.php?route=product/product&amp;product_id=51', 'data/banner/88.png'),
+(107, 7, 'index.php?route=product/product&amp;product_id=56', 'data/banner/55.png');
 
 -- --------------------------------------------------------
 
@@ -303,7 +316,6 @@ CREATE TABLE IF NOT EXISTS `oc_banner_image_description` (
 --
 
 INSERT INTO `oc_banner_image_description` (`banner_image_id`, `language_id`, `banner_id`, `title`) VALUES
-(101, 1, 7, 'test5'),
 (77, 1, 6, 'HP Banner'),
 (75, 1, 8, 'HTC'),
 (74, 1, 8, 'Canon'),
@@ -311,7 +323,7 @@ INSERT INTO `oc_banner_image_description` (`banner_image_id`, `language_id`, `ba
 (72, 1, 8, 'Palm'),
 (71, 1, 8, 'Sony'),
 (76, 1, 8, 'Hewlett-Packard'),
-(100, 2, 7, 'test4'),
+(111, 2, 7, 'Samsung Tab 10.1'),
 (77, 2, 6, 'HP Banner'),
 (75, 2, 8, 'HTC'),
 (74, 2, 8, 'Canon'),
@@ -319,14 +331,15 @@ INSERT INTO `oc_banner_image_description` (`banner_image_id`, `language_id`, `ba
 (72, 2, 8, 'Palm'),
 (71, 2, 8, 'Sony'),
 (76, 2, 8, 'Hewlett-Packard'),
-(100, 1, 7, 'test4'),
-(99, 2, 7, 'test'),
-(99, 1, 7, 'test'),
-(98, 2, 7, 'test3'),
-(98, 1, 7, 'test3'),
-(97, 2, 7, 'Samsung Tab 10.1'),
-(97, 1, 7, 'Samsung Tab 10.1'),
-(101, 2, 7, 'test5');
+(111, 1, 7, 'Samsung Tab 10.1'),
+(110, 2, 7, 'test3'),
+(110, 1, 7, 'test3'),
+(109, 2, 7, 'test5'),
+(109, 1, 7, 'test5'),
+(108, 2, 7, 'test4'),
+(108, 1, 7, 'test4'),
+(107, 2, 7, 'test'),
+(107, 1, 7, 'test');
 
 -- --------------------------------------------------------
 
@@ -397,6 +410,11 @@ CREATE TABLE IF NOT EXISTS `oc_category_filter` (
   PRIMARY KEY (`category_id`,`filter_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
+--
+-- 转存表中的数据 `oc_category_filter`
+--
+
+
 -- --------------------------------------------------------
 
 --
@@ -433,6 +451,11 @@ CREATE TABLE IF NOT EXISTS `oc_category_to_layout` (
   `layout_id` int(11) NOT NULL,
   PRIMARY KEY (`category_id`,`store_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+--
+-- 转存表中的数据 `oc_category_to_layout`
+--
+
 
 -- --------------------------------------------------------
 
@@ -524,6 +547,11 @@ CREATE TABLE IF NOT EXISTS `oc_coupon_category` (
   PRIMARY KEY (`coupon_id`,`category_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
+--
+-- 转存表中的数据 `oc_coupon_category`
+--
+
+
 -- --------------------------------------------------------
 
 --
@@ -540,6 +568,11 @@ CREATE TABLE IF NOT EXISTS `oc_coupon_history` (
   PRIMARY KEY (`coupon_history_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
+--
+-- 转存表中的数据 `oc_coupon_history`
+--
+
+
 -- --------------------------------------------------------
 
 --
@@ -552,6 +585,11 @@ CREATE TABLE IF NOT EXISTS `oc_coupon_product` (
   `product_id` int(11) NOT NULL,
   PRIMARY KEY (`coupon_product_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+
+--
+-- 转存表中的数据 `oc_coupon_product`
+--
+
 
 -- --------------------------------------------------------
 
@@ -606,17 +644,29 @@ CREATE TABLE IF NOT EXISTS `oc_customer` (
   `token` varchar(255) NOT NULL,
   `date_added` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
   PRIMARY KEY (`customer_id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=5 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=17 ;
 
 --
 -- 转存表中的数据 `oc_customer`
 --
 
 INSERT INTO `oc_customer` (`customer_id`, `store_id`, `firstname`, `lastname`, `email`, `telephone`, `fax`, `password`, `salt`, `cart`, `wishlist`, `newsletter`, `address_id`, `customer_group_id`, `ip`, `status`, `approved`, `token`, `date_added`) VALUES
-(1, 0, '王格', '', 'wangte168@sina.com', '13433113412', '', '5902df929aa939c4dcd39d6e4de86d9019bb5ecb', 'fa0d4a0ee', 'a:2:{s:43:"47:YToxOntpOjIyNTtzOjEwOiIyMDExLTA0LTIyIjt9";i:5;i:43;i:1;}', 'a:1:{i:0;s:2:"43";}', 0, 1, 1, '202.204.81.57', 1, 1, '', '2013-12-05 00:39:29'),
+(1, 0, '王格', '', 'wangte168@sina.com', '13433113412', '', '5902df929aa939c4dcd39d6e4de86d9019bb5ecb', 'fa0d4a0ee', 'a:1:{i:51;i:4;}', 'a:0:{}', 0, 1, 1, '127.0.0.1', 1, 1, '', '2013-12-05 00:39:29'),
+(5, 0, '赵洲洋', '', '493106672@qq.com', '15120074119', '', '1e2d3331cdc19c15174ccd099038dfd09798745a', 'b1ce2ccba', NULL, NULL, 0, 0, 1, '202.204.81.57', 1, 1, '', '2014-01-15 22:08:54'),
 (2, 0, '王特', '', 'wangte1688@sina.com', '1231111123', '', 'ea25422c9fc2368279f760e9dfa9ad1ae2b2a389', '9f3e77cd0', 'a:1:{i:40;i:1;}', 'a:0:{}', 0, 0, 1, '127.0.0.1', 1, 1, '', '2013-12-05 19:50:15'),
 (3, 0, '特警', '', 'asdf@sina.com', '1231111123', '', '62e438e394f59ce2e067e00153ccf693cb7daa7d', 'f15a78208', 'a:0:{}', 'a:0:{}', 0, 0, 1, '127.0.0.1', 1, 1, '', '2013-12-05 19:55:15'),
-(4, 0, 'zzy', '', 'zhouyang.zhao.2011@gmail.com', '15120074119', '', 'dd201e42616280cf76701c24db36b63f8a418da9', 'f02137f51', 'a:1:{s:43:"47:YToxOntpOjIyNTtzOjEwOiIyMDExLTA0LTIyIjt9";i:1;}', 'a:0:{}', 0, 0, 1, '202.204.81.57', 1, 1, '', '2013-12-12 11:33:36');
+(4, 0, 'zzy', '', 'zhouyang.zhao.2011@gmail.com', '15120074119', '', 'dd201e42616280cf76701c24db36b63f8a418da9', 'f02137f51', 'a:2:{i:52;i:1;i:51;i:1;}', 'a:0:{}', 0, 0, 1, '202.204.81.57', 1, 1, '', '2013-12-12 11:33:36'),
+(6, 0, '赵洲洋', '', '493106671@qq.com', '15120074119', '', '7de4fdbe7b1b595bc17f8d4be345f101541ffb21', '7b543b88e', NULL, NULL, 0, 0, 1, '202.204.81.57', 1, 1, '', '2014-01-15 22:14:49'),
+(7, 0, '赵洲洋', '', '493106@qq.com', '15120074119', '', '5c7cabb3bfd15479ff86d27a38057cb47e6237b1', '70c4e7f86', NULL, NULL, 0, 0, 1, '202.204.81.57', 1, 1, '', '2014-01-15 22:15:01'),
+(8, 0, '赵洲洋', '', '49310@qq.com', '15120074119', '', '590f4cba9638eef51246145019a3785ffe71ca4d', 'cc2c0e064', NULL, NULL, 0, 0, 1, '202.204.81.57', 1, 1, '', '2014-01-15 22:15:29'),
+(9, 0, '网特', '', 'wadf@sina.com', '1123123123', '', '0786f4ba8f9011ac13ad53fc83b9d684a4c4b21e', '8e2b766b6', NULL, NULL, 0, 0, 1, '202.204.81.57', 1, 1, '', '2014-01-15 23:25:57'),
+(10, 0, '测试', '', 'test1@aa.com', '12312312311', '', 'db4526077e64371cd57fe7e0d411f087b1e97e3c', '548561a8a', NULL, NULL, 0, 0, 1, '202.204.81.57', 1, 1, '', '2014-01-16 10:51:14'),
+(11, 0, '测试', '', 'test2@aa.com', '12312312311', '', '5a1b7d9f70dceb71815c0bf9a6879db284b160ba', '3d44aaa49', NULL, NULL, 0, 0, 1, '202.204.81.57', 1, 1, '', '2014-01-16 10:56:32'),
+(12, 0, '测试', '', 'test3@aa.com', '12312312311', '', 'd626d725285c479f23bfa7ff2c10453d9b7f8330', 'c9d8ac0c1', NULL, NULL, 0, 0, 1, '202.204.81.57', 1, 1, '', '2014-01-16 10:58:13'),
+(13, 0, '测试', '', 'test4@aa.com', '12312312311', '', '448c0763bf245321d9c02ae234bd8a61cb2751b8', 'a3ac7a628', NULL, NULL, 0, 0, 1, '202.204.81.57', 1, 1, '', '2014-01-16 10:59:53'),
+(14, 0, '测试', '', 'tes5@aa.com', '12312312311', '', '38344ac32dcbe75b1477bc6347c4fdbbcbe44fbd', 'b9a948762', NULL, NULL, 0, 0, 1, '202.204.81.57', 1, 1, '', '2014-01-16 11:00:34'),
+(15, 0, '测试', '', 'test5@aa.com', '12312312311', '', '9f07347d83bf76e328244d010e38ad4e51f7b2d5', '5f8423f6c', NULL, NULL, 0, 0, 1, '202.204.81.57', 1, 1, '', '2014-01-16 11:02:14'),
+(16, 0, '测试', '', 'test6@aa.com', '12312312311', '', '003c271b3604acd7a216c3958c634aa3176040aa', 'cf46f8404', 'a:0:{}', 'a:0:{}', 0, 0, 1, '202.204.81.57', 1, 1, '', '2014-01-16 11:02:39');
 
 -- --------------------------------------------------------
 
@@ -630,6 +680,11 @@ CREATE TABLE IF NOT EXISTS `oc_customer_ban_ip` (
   PRIMARY KEY (`customer_ban_ip_id`),
   KEY `ip` (`ip`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+
+--
+-- 转存表中的数据 `oc_customer_ban_ip`
+--
+
 
 -- --------------------------------------------------------
 
@@ -646,6 +701,11 @@ CREATE TABLE IF NOT EXISTS `oc_customer_field` (
   `sort_order` int(3) NOT NULL,
   PRIMARY KEY (`customer_id`,`custom_field_id`,`custom_field_value_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+--
+-- 转存表中的数据 `oc_customer_field`
+--
+
 
 -- --------------------------------------------------------
 
@@ -707,6 +767,11 @@ CREATE TABLE IF NOT EXISTS `oc_customer_history` (
   PRIMARY KEY (`customer_history_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
+--
+-- 转存表中的数据 `oc_customer_history`
+--
+
+
 -- --------------------------------------------------------
 
 --
@@ -720,7 +785,7 @@ CREATE TABLE IF NOT EXISTS `oc_customer_ip` (
   `date_added` datetime NOT NULL,
   PRIMARY KEY (`customer_ip_id`),
   KEY `ip` (`ip`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=6 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=7 ;
 
 --
 -- 转存表中的数据 `oc_customer_ip`
@@ -731,7 +796,8 @@ INSERT INTO `oc_customer_ip` (`customer_ip_id`, `customer_id`, `ip`, `date_added
 (2, 2, '127.0.0.1', '2013-12-05 19:50:16'),
 (3, 3, '127.0.0.1', '2013-12-05 19:55:16'),
 (4, 1, '202.204.81.57', '2013-12-11 12:29:07'),
-(5, 4, '202.204.81.57', '2013-12-12 11:33:37');
+(5, 4, '202.204.81.57', '2013-12-12 11:33:37'),
+(6, 16, '202.204.81.57', '2014-01-16 11:02:40');
 
 -- --------------------------------------------------------
 
@@ -747,6 +813,11 @@ CREATE TABLE IF NOT EXISTS `oc_customer_online` (
   `date_added` datetime NOT NULL,
   PRIMARY KEY (`ip`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+--
+-- 转存表中的数据 `oc_customer_online`
+--
+
 
 -- --------------------------------------------------------
 
@@ -764,6 +835,11 @@ CREATE TABLE IF NOT EXISTS `oc_customer_reward` (
   PRIMARY KEY (`customer_reward_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
+--
+-- 转存表中的数据 `oc_customer_reward`
+--
+
+
 -- --------------------------------------------------------
 
 --
@@ -779,6 +855,11 @@ CREATE TABLE IF NOT EXISTS `oc_customer_transaction` (
   `date_added` datetime NOT NULL,
   PRIMARY KEY (`customer_transaction_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+
+--
+-- 转存表中的数据 `oc_customer_transaction`
+--
+
 
 -- --------------------------------------------------------
 
@@ -797,6 +878,11 @@ CREATE TABLE IF NOT EXISTS `oc_custom_field` (
   PRIMARY KEY (`custom_field_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
+--
+-- 转存表中的数据 `oc_custom_field`
+--
+
+
 -- --------------------------------------------------------
 
 --
@@ -810,6 +896,11 @@ CREATE TABLE IF NOT EXISTS `oc_custom_field_description` (
   PRIMARY KEY (`custom_field_id`,`language_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
+--
+-- 转存表中的数据 `oc_custom_field_description`
+--
+
+
 -- --------------------------------------------------------
 
 --
@@ -821,6 +912,11 @@ CREATE TABLE IF NOT EXISTS `oc_custom_field_to_customer_group` (
   `customer_group_id` int(11) NOT NULL,
   PRIMARY KEY (`custom_field_id`,`customer_group_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+--
+-- 转存表中的数据 `oc_custom_field_to_customer_group`
+--
+
 
 -- --------------------------------------------------------
 
@@ -835,6 +931,11 @@ CREATE TABLE IF NOT EXISTS `oc_custom_field_value` (
   PRIMARY KEY (`custom_field_value_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
+--
+-- 转存表中的数据 `oc_custom_field_value`
+--
+
+
 -- --------------------------------------------------------
 
 --
@@ -848,6 +949,11 @@ CREATE TABLE IF NOT EXISTS `oc_custom_field_value_description` (
   `name` varchar(128) NOT NULL,
   PRIMARY KEY (`custom_field_value_id`,`language_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+--
+-- 转存表中的数据 `oc_custom_field_value_description`
+--
+
 
 -- --------------------------------------------------------
 
@@ -864,6 +970,11 @@ CREATE TABLE IF NOT EXISTS `oc_download` (
   PRIMARY KEY (`download_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
+--
+-- 转存表中的数据 `oc_download`
+--
+
+
 -- --------------------------------------------------------
 
 --
@@ -877,6 +988,11 @@ CREATE TABLE IF NOT EXISTS `oc_download_description` (
   PRIMARY KEY (`download_id`,`language_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
+--
+-- 转存表中的数据 `oc_download_description`
+--
+
+
 -- --------------------------------------------------------
 
 --
@@ -888,7 +1004,7 @@ CREATE TABLE IF NOT EXISTS `oc_extension` (
   `type` varchar(32) NOT NULL,
   `code` varchar(32) NOT NULL,
   PRIMARY KEY (`extension_id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=437 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=439 ;
 
 --
 -- 转存表中的数据 `oc_extension`
@@ -917,7 +1033,9 @@ INSERT INTO `oc_extension` (`extension_id`, `type`, `code`) VALUES
 (419, 'module', 'slideshow'),
 (429, 'payment', 'alipay'),
 (431, 'module', 'welcome'),
-(436, 'shipping', 'free');
+(436, 'shipping', 'free'),
+(437, 'payment', 'tenpay'),
+(438, 'payment', 'yeepay');
 
 -- --------------------------------------------------------
 
@@ -931,6 +1049,11 @@ CREATE TABLE IF NOT EXISTS `oc_filter` (
   `sort_order` int(3) NOT NULL,
   PRIMARY KEY (`filter_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+
+--
+-- 转存表中的数据 `oc_filter`
+--
+
 
 -- --------------------------------------------------------
 
@@ -946,6 +1069,11 @@ CREATE TABLE IF NOT EXISTS `oc_filter_description` (
   PRIMARY KEY (`filter_id`,`language_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
+--
+-- 转存表中的数据 `oc_filter_description`
+--
+
+
 -- --------------------------------------------------------
 
 --
@@ -957,6 +1085,11 @@ CREATE TABLE IF NOT EXISTS `oc_filter_group` (
   `sort_order` int(3) NOT NULL,
   PRIMARY KEY (`filter_group_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+
+--
+-- 转存表中的数据 `oc_filter_group`
+--
+
 
 -- --------------------------------------------------------
 
@@ -970,6 +1103,11 @@ CREATE TABLE IF NOT EXISTS `oc_filter_group_description` (
   `name` varchar(64) NOT NULL,
   PRIMARY KEY (`filter_group_id`,`language_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+--
+-- 转存表中的数据 `oc_filter_group_description`
+--
+
 
 -- --------------------------------------------------------
 
@@ -1504,7 +1642,7 @@ CREATE TABLE IF NOT EXISTS `oc_order` (
   `date_added` datetime NOT NULL,
   `date_modified` datetime NOT NULL,
   PRIMARY KEY (`order_id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=18 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=23 ;
 
 --
 -- 转存表中的数据 `oc_order`
@@ -1527,7 +1665,12 @@ INSERT INTO `oc_order` (`order_id`, `invoice_no`, `invoice_prefix`, `store_id`, 
 (14, 0, 'INV-2013-00', 0, 'Your Store', 'http://t.te168.cn/opencartcn/', 3, 1, '特警', '', 'asdf@sina.com', '1231111123', '', '测试', '', '', '', '', '中关村南大街5号', '', '海淀区', '100081', '中国 ', 44, '北京', 685, '', '支付宝', 'alipay', '', '', '', '', '', '', '', '', 0, '', 0, '', '', '', '', '201.0000', 0, 0, '0.0000', 1, 1, 'CNY', '1.00000000', '127.0.0.1', '', 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:25.0) Gecko/20100101 Firefox/25.0', 'zh-cn,zh;q=0.8,en-us;q=0.5,en;q=0.3', '2013-12-06 16:05:07', '2013-12-06 16:05:07'),
 (15, 0, 'INV-2013-00', 0, 'Your Store', 'http://t.te168.cn/opencartcn/', 3, 1, '特警', '', 'asdf@sina.com', '1231111123', '', '测试', '', '', '', '', '中关村南大街5号', '', '海淀区', '100081', '中国 ', 44, '北京', 685, '', '支付宝', 'alipay', '', '', '', '', '', '', '', '', 0, '', 0, '', '', '', '', '201.0000', 0, 0, '0.0000', 1, 1, 'CNY', '1.00000000', '127.0.0.1', '', 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:25.0) Gecko/20100101 Firefox/25.0', 'zh-cn,zh;q=0.8,en-us;q=0.5,en;q=0.3', '2013-12-06 16:05:15', '2013-12-06 16:05:15'),
 (16, 0, 'INV-2013-00', 0, 'Your Store', 'http://t.te168.cn/opencartcn/', 3, 1, '特警', '', 'asdf@sina.com', '1231111123', '', '测试', '', '', '', '', '中关村南大街5号', '', '海淀区', '100081', '中国 ', 44, '北京', 685, '', '货到付款', 'cod', '', '', '', '', '', '', '', '', 0, '', 0, '', '', '', '', '201.0000', 1, 0, '0.0000', 1, 1, 'CNY', '1.00000000', '127.0.0.1', '', 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:25.0) Gecko/20100101 Firefox/25.0', 'zh-cn,zh;q=0.8,en-us;q=0.5,en;q=0.3', '2013-12-06 16:07:14', '2013-12-06 16:07:17'),
-(17, 0, 'INV-2013-00', 0, 'Your Store', 'http://t.te168.cn/opencartcn/', 3, 1, '特警', '', 'asdf@sina.com', '1231111123', '', '测试', '', '', '', '', '中关村南大街5号', '', '海淀区', '100081', '中国 ', 44, '北京', 685, '', '货到付款', 'cod', '', '', '', '', '', '', '', '', 0, '', 0, '', '', '', '', '80.0000', 1, 0, '0.0000', 1, 1, 'CNY', '1.00000000', '127.0.0.1', '', 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:25.0) Gecko/20100101 Firefox/25.0', 'zh-cn,zh;q=0.8,en-us;q=0.5,en;q=0.3', '2013-12-07 09:40:25', '2013-12-07 09:40:27');
+(17, 0, 'INV-2013-00', 0, 'Your Store', 'http://t.te168.cn/opencartcn/', 3, 1, '特警', '', 'asdf@sina.com', '1231111123', '', '测试', '', '', '', '', '中关村南大街5号', '', '海淀区', '100081', '中国 ', 44, '北京', 685, '', '货到付款', 'cod', '', '', '', '', '', '', '', '', 0, '', 0, '', '', '', '', '80.0000', 1, 0, '0.0000', 1, 1, 'CNY', '1.00000000', '127.0.0.1', '', 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:25.0) Gecko/20100101 Firefox/25.0', 'zh-cn,zh;q=0.8,en-us;q=0.5,en;q=0.3', '2013-12-07 09:40:25', '2013-12-07 09:40:27'),
+(18, 0, 'INV-2013-00', 0, '生命方舟', 'http://lifark.te168.cn/', 1, 1, '王格', '', 'wangte168@sina.com', '13433113412', '', '王格', '', '', '', '', '中关村南大街5号', '', '北京市', '100081', '中国 ', 44, '北京', 685, '', '支付宝', 'alipay', '', '', '', '', '', '', '', '', 0, '', 0, '', '', '', '', '199.0000', 0, 0, '0.0000', 1, 1, 'CNY', '1.00000000', '202.204.81.57', '10.0.6.67', 'Mozilla/5.0 (Windows NT 6.1; WOW64; Trident/7.0; rv:11.0) like Gecko', 'zh-CN', '2013-12-23 09:32:27', '2013-12-23 09:32:27'),
+(19, 0, 'INV-2013-00', 0, '生命方舟', 'http://lifark.te168.cn/', 1, 1, '王格', '', 'wangte168@sina.com', '13433113412', '', '王格', '', '', '', '', '中关村南大街5号', '', '北京市', '100081', '中国 ', 44, '北京', 685, '', '网银支付（易宝）', 'yeepay', '', '', '', '', '', '', '', '', 0, '', 0, '', '', '', '', '398.0000', 0, 0, '0.0000', 1, 1, 'CNY', '1.00000000', '202.204.81.57', '10.15.5.168', 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:26.0) Gecko/20100101 Firefox/26.0', 'zh-cn,zh;q=0.8,en-us;q=0.5,en;q=0.3', '2013-12-23 09:54:53', '2013-12-23 09:54:53'),
+(20, 0, 'INV-2013-00', 0, '生命方舟', 'http://lifark.te168.cn/', 1, 1, '王格', '', 'wangte168@sina.com', '13433113412', '', '王格', '', '', '', '', '中关村南大街5号', '', '北京市', '100081', '中国 ', 44, '北京', 685, '', '财付通', 'tenpay', '', '', '', '', '', '', '', '', 0, '', 0, '', '', '', '', '398.0000', 0, 0, '0.0000', 1, 1, 'CNY', '1.00000000', '202.204.81.57', '10.15.5.168', 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:26.0) Gecko/20100101 Firefox/26.0', 'zh-cn,zh;q=0.8,en-us;q=0.5,en;q=0.3', '2013-12-23 09:55:14', '2013-12-23 09:55:14'),
+(21, 0, 'INV-2013-00', 0, '生命方舟', 'http://lifark.te168.cn/', 1, 1, '王格', '', 'wangte168@sina.com', '13433113412', '', '王格', '', '', '', '', '中关村南大街5号', '', '北京市', '100081', '中国 ', 44, '北京', 685, '', '支付宝', 'alipay', '', '', '', '', '', '', '', '', 0, '', 0, '', '', '', '', '597.0000', 0, 0, '0.0000', 1, 1, 'CNY', '1.00000000', '202.204.81.57', '10.0.6.67', 'Mozilla/5.0 (Windows NT 6.1; WOW64; Trident/7.0; rv:11.0) like Gecko', 'zh-CN', '2014-01-15 23:33:02', '2014-01-15 23:33:02'),
+(22, 0, 'INV-2013-00', 0, '生命方舟', 'http://lifark.te168.cn/', 1, 1, '王格', '', 'wangte168@sina.com', '13433113412', '', 'aaa', '', '', '', '', 'bbasdfasdfasdf', '123', '123', '123', '中国 ', 44, '云南', 713, '', '支付宝', 'alipay', '', '', '', '', '', '', '', '', 0, '', 0, '', '', '', '', '796.0000', 0, 0, '0.0000', 1, 1, 'CNY', '1.00000000', '127.0.0.1', '', 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:26.0) Gecko/20100101 Firefox/26.0', 'zh-cn,zh;q=0.8,en-us;q=0.5,en;q=0.3', '2014-01-16 15:45:18', '2014-01-16 15:45:18');
 
 -- --------------------------------------------------------
 
@@ -1546,6 +1689,11 @@ CREATE TABLE IF NOT EXISTS `oc_order_download` (
   PRIMARY KEY (`order_download_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
+--
+-- 转存表中的数据 `oc_order_download`
+--
+
+
 -- --------------------------------------------------------
 
 --
@@ -1561,6 +1709,11 @@ CREATE TABLE IF NOT EXISTS `oc_order_field` (
   `sort_order` int(3) NOT NULL,
   PRIMARY KEY (`order_id`,`custom_field_id`,`custom_field_value_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+--
+-- 转存表中的数据 `oc_order_field`
+--
+
 
 -- --------------------------------------------------------
 
@@ -1624,6 +1777,11 @@ CREATE TABLE IF NOT EXISTS `oc_order_fraud` (
   `date_added` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
   PRIMARY KEY (`order_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+--
+-- 转存表中的数据 `oc_order_fraud`
+--
+
 
 -- --------------------------------------------------------
 
@@ -1694,7 +1852,7 @@ CREATE TABLE IF NOT EXISTS `oc_order_product` (
   `tax` decimal(15,4) NOT NULL DEFAULT '0.0000',
   `reward` int(8) NOT NULL,
   PRIMARY KEY (`order_product_id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=21 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=26 ;
 
 --
 -- 转存表中的数据 `oc_order_product`
@@ -1720,7 +1878,12 @@ INSERT INTO `oc_order_product` (`order_product_id`, `order_id`, `product_id`, `n
 (17, 15, 48, 'iPod Classic', 'product 20', 1, '100.0000', '100.0000', '0.0000', 0),
 (18, 16, 40, 'iPhone', 'product 11', 1, '101.0000', '101.0000', '0.0000', 0),
 (19, 16, 48, 'iPod Classic', 'product 20', 1, '100.0000', '100.0000', '0.0000', 0),
-(20, 17, 30, 'Canon EOS 5D', 'Product 3', 1, '80.0000', '80.0000', '0.0000', 200);
+(20, 17, 30, 'Canon EOS 5D', 'Product 3', 1, '80.0000', '80.0000', '0.0000', 200),
+(21, 18, 51, '生命方舟智能健康腕带', 'S101', 1, '199.0000', '199.0000', '0.0000', 0),
+(22, 19, 51, '生命方舟智能健康腕带', 'S101', 2, '199.0000', '398.0000', '0.0000', 0),
+(23, 20, 51, '生命方舟智能健康腕带', 'S101', 2, '199.0000', '398.0000', '0.0000', 0),
+(24, 21, 51, '生命方舟智能健康腕带', 'S101', 3, '199.0000', '597.0000', '0.0000', 0),
+(25, 22, 51, '生命方舟智能健康腕带', 'S101', 4, '199.0000', '796.0000', '0.0000', 0);
 
 -- --------------------------------------------------------
 
@@ -1787,7 +1950,7 @@ CREATE TABLE IF NOT EXISTS `oc_order_total` (
   `sort_order` int(3) NOT NULL,
   PRIMARY KEY (`order_total_id`),
   KEY `idx_orders_total_orders_id` (`order_id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=22 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=27 ;
 
 --
 -- 转存表中的数据 `oc_order_total`
@@ -1814,7 +1977,12 @@ INSERT INTO `oc_order_total` (`order_total_id`, `order_id`, `code`, `title`, `te
 (18, 14, 'sub_total', '商品总额', '￥201.00', '201.0000', 1),
 (19, 15, 'sub_total', '商品总额', '￥201.00', '201.0000', 1),
 (20, 16, 'sub_total', '商品总额', '￥201.00', '201.0000', 1),
-(21, 17, 'sub_total', '商品总额', '￥80.00', '80.0000', 1);
+(21, 17, 'sub_total', '商品总额', '￥80.00', '80.0000', 1),
+(22, 18, 'sub_total', '商品总额', '￥199.00', '199.0000', 1),
+(23, 19, 'sub_total', '商品总额', '￥398.00', '398.0000', 1),
+(24, 20, 'sub_total', '商品总额', '￥398.00', '398.0000', 1),
+(25, 21, 'sub_total', '商品总额', '￥597.00', '597.0000', 1),
+(26, 22, 'sub_total', '商品总额', '￥796.00', '796.0000', 1);
 
 -- --------------------------------------------------------
 
@@ -1837,6 +2005,11 @@ CREATE TABLE IF NOT EXISTS `oc_order_voucher` (
   `amount` decimal(15,4) NOT NULL,
   PRIMARY KEY (`order_voucher_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+
+--
+-- 转存表中的数据 `oc_order_voucher`
+--
+
 
 -- --------------------------------------------------------
 
@@ -1884,12 +2057,12 @@ CREATE TABLE IF NOT EXISTS `oc_product` (
 --
 
 INSERT INTO `oc_product` (`product_id`, `model`, `sku`, `upc`, `ean`, `jan`, `isbn`, `mpn`, `location`, `quantity`, `stock_status_id`, `image`, `manufacturer_id`, `shipping`, `price`, `points`, `tax_class_id`, `date_available`, `weight`, `weight_class_id`, `length`, `width`, `height`, `length_class_id`, `subtract`, `minimum`, `sort_order`, `status`, `date_added`, `date_modified`, `viewed`) VALUES
-(50, 'S100', '', '', '', '', '', '', '', 1000, 7, 'data/product/6.png', 0, 1, '199.0000', 0, 0, '2013-12-17', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 1, 1, '2013-12-18 16:49:24', '2013-12-18 21:51:57', 1),
-(51, 'S101', '', '', '', '', '', '', '', 1000, 7, 'data/product/2.png', 0, 1, '199.0000', 0, 0, '2013-12-17', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 1, 1, '2013-12-18 16:50:43', '2013-12-18 21:27:25', 10),
-(52, 'S103', '', '', '', '', '', '', '', 1, 7, 'data/product/else1.png', 0, 1, '0.0000', 0, 0, '2013-12-17', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 1, 1, '2013-12-18 21:36:25', '0000-00-00 00:00:00', 2),
-(53, 'S104', '', '', '', '', '', '', '', 1, 7, 'data/product/else2.png', 0, 1, '0.0000', 0, 0, '2013-12-17', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 1, 1, '2013-12-18 21:38:25', '2013-12-18 21:54:22', 2),
-(55, 'S106', '', '', '', '', '', '', '', 1, 7, 'data/product/else4.png', 0, 1, '0.0000', 0, 0, '2013-12-17', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 1, 1, '2013-12-18 21:44:05', '2013-12-18 22:16:42', 2),
-(56, 'S107', '', '', '', '', '', '', '', 1, 7, 'data/product/else5.png', 0, 1, '0.0000', 0, 0, '2013-12-17', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 1, 1, '2013-12-18 22:03:46', '0000-00-00 00:00:00', 2);
+(50, 'S100', '', '', '', '', '', '', '', 1000, 7, 'data/product/6.png', 0, 1, '199.0000', 0, 0, '2013-12-17', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 1, 1, '2013-12-18 16:49:24', '2013-12-18 21:51:57', 15),
+(51, 'S101', '', '', '', '', '', '', '', 1000, 7, 'data/product/2.png', 0, 1, '199.0000', 0, 0, '2013-12-17', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 1, 1, '2013-12-18 16:50:43', '2013-12-18 21:27:25', 20),
+(52, 'S103', '', '', '', '', '', '', '', 1, 7, 'data/product/else1.png', 0, 1, '0.0000', 0, 0, '2013-12-17', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 1, 1, '2013-12-18 21:36:25', '0000-00-00 00:00:00', 8),
+(53, 'S104', '', '', '', '', '', '', '', 1, 7, 'data/product/else2.png', 0, 1, '0.0000', 0, 0, '2013-12-17', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 1, 1, '2013-12-18 21:38:25', '2013-12-18 21:54:22', 4),
+(55, 'S106', '', '', '', '', '', '', '', 1, 7, 'data/product/else4.png', 0, 1, '0.0000', 0, 0, '2013-12-17', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 1, 1, '2013-12-18 21:44:05', '2013-12-18 22:16:42', 4),
+(56, 'S107', '', '', '', '', '', '', '', 1, 7, 'data/product/else5.png', 0, 1, '0.0000', 0, 0, '2013-12-17', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 1, 1, '2013-12-18 22:03:46', '0000-00-00 00:00:00', 6);
 
 -- --------------------------------------------------------
 
@@ -1904,6 +2077,11 @@ CREATE TABLE IF NOT EXISTS `oc_product_attribute` (
   `text` text NOT NULL,
   PRIMARY KEY (`product_id`,`attribute_id`,`language_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+--
+-- 转存表中的数据 `oc_product_attribute`
+--
+
 
 -- --------------------------------------------------------
 
@@ -1960,6 +2138,11 @@ CREATE TABLE IF NOT EXISTS `oc_product_discount` (
   KEY `product_id` (`product_id`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=447 ;
 
+--
+-- 转存表中的数据 `oc_product_discount`
+--
+
+
 -- --------------------------------------------------------
 
 --
@@ -1971,6 +2154,11 @@ CREATE TABLE IF NOT EXISTS `oc_product_filter` (
   `filter_id` int(11) NOT NULL,
   PRIMARY KEY (`product_id`,`filter_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+--
+-- 转存表中的数据 `oc_product_filter`
+--
+
 
 -- --------------------------------------------------------
 
@@ -2021,6 +2209,11 @@ CREATE TABLE IF NOT EXISTS `oc_product_option` (
   PRIMARY KEY (`product_option_id`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=228 ;
 
+--
+-- 转存表中的数据 `oc_product_option`
+--
+
+
 -- --------------------------------------------------------
 
 --
@@ -2044,6 +2237,11 @@ CREATE TABLE IF NOT EXISTS `oc_product_option_value` (
   PRIMARY KEY (`product_option_value_id`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=19 ;
 
+--
+-- 转存表中的数据 `oc_product_option_value`
+--
+
+
 -- --------------------------------------------------------
 
 --
@@ -2055,6 +2253,11 @@ CREATE TABLE IF NOT EXISTS `oc_product_related` (
   `related_id` int(11) NOT NULL,
   PRIMARY KEY (`product_id`,`related_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+--
+-- 转存表中的数据 `oc_product_related`
+--
+
 
 -- --------------------------------------------------------
 
@@ -2100,6 +2303,11 @@ CREATE TABLE IF NOT EXISTS `oc_product_special` (
   KEY `product_id` (`product_id`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=442 ;
 
+--
+-- 转存表中的数据 `oc_product_special`
+--
+
+
 -- --------------------------------------------------------
 
 --
@@ -2140,6 +2348,11 @@ CREATE TABLE IF NOT EXISTS `oc_product_to_download` (
   PRIMARY KEY (`product_id`,`download_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
+--
+-- 转存表中的数据 `oc_product_to_download`
+--
+
+
 -- --------------------------------------------------------
 
 --
@@ -2152,6 +2365,11 @@ CREATE TABLE IF NOT EXISTS `oc_product_to_layout` (
   `layout_id` int(11) NOT NULL,
   PRIMARY KEY (`product_id`,`store_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+--
+-- 转存表中的数据 `oc_product_to_layout`
+--
+
 
 -- --------------------------------------------------------
 
@@ -2206,6 +2424,11 @@ CREATE TABLE IF NOT EXISTS `oc_return` (
   PRIMARY KEY (`return_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
+--
+-- 转存表中的数据 `oc_return`
+--
+
+
 -- --------------------------------------------------------
 
 --
@@ -2246,6 +2469,11 @@ CREATE TABLE IF NOT EXISTS `oc_return_history` (
   `date_added` datetime NOT NULL,
   PRIMARY KEY (`return_history_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+
+--
+-- 转存表中的数据 `oc_return_history`
+--
+
 
 -- --------------------------------------------------------
 
@@ -2321,6 +2549,11 @@ CREATE TABLE IF NOT EXISTS `oc_review` (
   KEY `product_id` (`product_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
+--
+-- 转存表中的数据 `oc_review`
+--
+
+
 -- --------------------------------------------------------
 
 --
@@ -2335,7 +2568,7 @@ CREATE TABLE IF NOT EXISTS `oc_setting` (
   `value` text NOT NULL,
   `serialized` tinyint(1) NOT NULL,
   PRIMARY KEY (`setting_id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=1953 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2382 ;
 
 --
 -- 转存表中的数据 `oc_setting`
@@ -2365,125 +2598,137 @@ INSERT INTO `oc_setting` (`setting_id`, `store_id`, `group`, `key`, `value`, `se
 (1951, 0, 'featured', 'featured_product', '50,51,56,53,55,52', 0),
 (1952, 0, 'featured', 'featured_module', 'a:1:{i:0;a:7:{s:5:"limit";s:1:"6";s:11:"image_width";s:3:"200";s:12:"image_height";s:3:"200";s:9:"layout_id";s:1:"1";s:8:"position";s:11:"content_top";s:6:"status";s:1:"1";s:10:"sort_order";s:1:"2";}}', 1),
 (467, 0, 'flat', 'flat_cost', '5', 0),
-(1944, 0, 'config', 'config_error_log', '0', 0),
-(1943, 0, 'config', 'config_error_display', '1', 0),
-(1942, 0, 'config', 'config_compression', '0', 0),
+(2380, 0, 'config', 'config_error_filename', 'error.txt', 0),
+(2379, 0, 'config', 'config_error_log', '0', 0),
 (139, 0, 'reward', 'reward_sort_order', '2', 0),
 (138, 0, 'reward', 'reward_status', '0', 0),
-(1941, 0, 'config', 'config_encryption', '3dca82aac05b5ab777213ac7b2c0ff9e', 0),
+(2378, 0, 'config', 'config_error_display', '1', 0),
 (56, 0, 'affiliate', 'affiliate_module', 'a:1:{i:0;a:4:{s:9:"layout_id";s:2:"10";s:8:"position";s:12:"column_right";s:6:"status";s:1:"1";s:10:"sort_order";s:1:"1";}}', 1),
 (136, 0, 'category', 'category_module', 'a:2:{i:0;a:4:{s:9:"layout_id";s:1:"3";s:8:"position";s:11:"column_left";s:6:"status";s:1:"0";s:10:"sort_order";s:1:"1";}i:1;a:4:{s:9:"layout_id";s:1:"2";s:8:"position";s:11:"column_left";s:6:"status";s:1:"0";s:10:"sort_order";s:1:"1";}}', 1),
-(1939, 0, 'config', 'config_maintenance', '0', 0),
-(1940, 0, 'config', 'config_password', '1', 0),
+(2377, 0, 'config', 'config_compression', '0', 0),
 (1522, 0, 'account', 'account_module', 'a:1:{i:0;a:4:{s:9:"layout_id";s:1:"6";s:8:"position";s:11:"column_left";s:6:"status";s:1:"1";s:10:"sort_order";s:0:"";}}', 1),
-(1938, 0, 'config', 'config_file_mime_allowed', 'text/plain\r\nimage/png\r\nimage/jpeg\r\nimage/jpeg\r\nimage/jpeg\r\nimage/gif\r\nimage/bmp\r\nimage/vnd.microsoft.icon\r\nimage/tiff\r\nimage/tiff\r\nimage/svg+xml\r\nimage/svg+xml\r\napplication/zip\r\napplication/x-rar-compressed\r\napplication/x-msdownload\r\napplication/vnd.ms-cab-compressed\r\naudio/mpeg\r\nvideo/quicktime\r\nvideo/quicktime\r\napplication/pdf\r\nimage/vnd.adobe.photoshop\r\napplication/postscript\r\napplication/postscript\r\napplication/postscript\r\napplication/msword\r\napplication/rtf\r\napplication/vnd.ms-excel\r\napplication/vnd.ms-powerpoint\r\napplication/vnd.oasis.opendocument.text\r\napplication/vnd.oasis.opendocument.spreadsheet', 0),
+(2376, 0, 'config', 'config_encryption', '3dca82aac05b5ab777213ac7b2c0ff9e', 0),
+(2375, 0, 'config', 'config_password', '1', 0),
+(2373, 0, 'config', 'config_file_mime_allowed', 'text/plain\r\nimage/png\r\nimage/jpeg\r\nimage/jpeg\r\nimage/jpeg\r\nimage/gif\r\nimage/bmp\r\nimage/vnd.microsoft.icon\r\nimage/tiff\r\nimage/tiff\r\nimage/svg+xml\r\nimage/svg+xml\r\napplication/zip\r\napplication/x-rar-compressed\r\napplication/x-msdownload\r\napplication/vnd.ms-cab-compressed\r\naudio/mpeg\r\nvideo/quicktime\r\nvideo/quicktime\r\napplication/pdf\r\nimage/vnd.adobe.photoshop\r\napplication/postscript\r\napplication/postscript\r\napplication/postscript\r\napplication/msword\r\napplication/rtf\r\napplication/vnd.ms-excel\r\napplication/vnd.ms-powerpoint\r\napplication/vnd.oasis.opendocument.text\r\napplication/vnd.oasis.opendocument.spreadsheet', 0),
 (472, 0, 'alipay', 'alipay_trade_type', 'create_partner_trade_by_buyer', 0),
 (473, 0, 'alipay', 'alipay_partner', '2088112493277314', 0),
 (474, 0, 'alipay', 'alipay_security_code', '4t39ubryj7qhkx9sg9a8ujh3a1lwb0zf', 0),
-(1946, 0, 'config', 'config_google_analytics', '', 0),
-(1936, 0, 'config', 'config_seo_url', '0', 0),
-(1937, 0, 'config', 'config_file_extension_allowed', 'txt\r\npng\r\njpe\r\njpeg\r\njpg\r\ngif\r\nbmp\r\nico\r\ntiff\r\ntif\r\nsvg\r\nsvgz\r\nzip\r\nrar\r\nmsi\r\ncab\r\nmp3\r\nqt\r\nmov\r\npdf\r\npsd\r\nai\r\neps\r\nps\r\ndoc\r\nrtf\r\nxls\r\nppt\r\nodt\r\nods', 0),
+(2374, 0, 'config', 'config_maintenance', '0', 0),
 (94, 0, 'voucher', 'voucher_sort_order', '8', 0),
 (95, 0, 'voucher', 'voucher_status', '1', 0),
 (103, 0, 'free_checkout', 'free_checkout_status', '1', 0),
 (104, 0, 'free_checkout', 'free_checkout_order_status_id', '1', 0),
-(1945, 0, 'config', 'config_error_filename', 'error.txt', 0),
 (1516, 0, 'slideshow', 'slideshow_module', 'a:1:{i:0;a:7:{s:9:"banner_id";s:1:"7";s:5:"width";s:3:"980";s:6:"height";s:3:"510";s:9:"layout_id";s:1:"1";s:8:"position";s:11:"content_top";s:6:"status";s:1:"1";s:10:"sort_order";s:1:"1";}}', 1),
 (137, 0, 'banner', 'banner_module', 'a:1:{i:0;a:7:{s:9:"banner_id";s:1:"6";s:5:"width";s:3:"182";s:6:"height";s:3:"182";s:9:"layout_id";s:1:"3";s:8:"position";s:11:"column_left";s:6:"status";s:1:"0";s:10:"sort_order";s:1:"3";}}', 1),
-(1935, 0, 'config', 'config_robots', 'abot\r\ndbot\r\nebot\r\nhbot\r\nkbot\r\nlbot\r\nmbot\r\nnbot\r\nobot\r\npbot\r\nrbot\r\nsbot\r\ntbot\r\nvbot\r\nybot\r\nzbot\r\nbot.\r\nbot/\r\n_bot\r\n.bot\r\n/bot\r\n-bot\r\n:bot\r\n(bot\r\ncrawl\r\nslurp\r\nspider\r\nseek\r\naccoona\r\nacoon\r\nadressendeutschland\r\nah-ha.com\r\nahoy\r\naltavista\r\nananzi\r\nanthill\r\nappie\r\narachnophilia\r\narale\r\naraneo\r\naranha\r\narchitext\r\naretha\r\narks\r\nasterias\r\natlocal\r\natn\r\natomz\r\naugurfind\r\nbackrub\r\nbannana_bot\r\nbaypup\r\nbdfetch\r\nbig brother\r\nbiglotron\r\nbjaaland\r\nblackwidow\r\nblaiz\r\nblog\r\nblo.\r\nbloodhound\r\nboitho\r\nbooch\r\nbradley\r\nbutterfly\r\ncalif\r\ncassandra\r\nccubee\r\ncfetch\r\ncharlotte\r\nchurl\r\ncienciaficcion\r\ncmc\r\ncollective\r\ncomagent\r\ncombine\r\ncomputingsite\r\ncsci\r\ncurl\r\ncusco\r\ndaumoa\r\ndeepindex\r\ndelorie\r\ndepspid\r\ndeweb\r\ndie blinde kuh\r\ndigger\r\nditto\r\ndmoz\r\ndocomo\r\ndownload express\r\ndtaagent\r\ndwcp\r\nebiness\r\nebingbong\r\ne-collector\r\nejupiter\r\nemacs-w3 search engine\r\nesther\r\nevliya celebi\r\nezresult\r\nfalcon\r\nfelix ide\r\nferret\r\nfetchrover\r\nfido\r\nfindlinks\r\nfireball\r\nfish search\r\nfouineur\r\nfunnelweb\r\ngazz\r\ngcreep\r\ngenieknows\r\ngetterroboplus\r\ngeturl\r\nglx\r\ngoforit\r\ngolem\r\ngrabber\r\ngrapnel\r\ngralon\r\ngriffon\r\ngromit\r\ngrub\r\ngulliver\r\nhamahakki\r\nharvest\r\nhavindex\r\nhelix\r\nheritrix\r\nhku www octopus\r\nhomerweb\r\nhtdig\r\nhtml index\r\nhtml_analyzer\r\nhtmlgobble\r\nhubater\r\nhyper-decontextualizer\r\nia_archiver\r\nibm_planetwide\r\nichiro\r\niconsurf\r\niltrovatore\r\nimage.kapsi.net\r\nimagelock\r\nincywincy\r\nindexer\r\ninfobee\r\ninformant\r\ningrid\r\ninktomisearch.com\r\ninspector web\r\nintelliagent\r\ninternet shinchakubin\r\nip3000\r\niron33\r\nisraeli-search\r\nivia\r\njack\r\njakarta\r\njavabee\r\njetbot\r\njumpstation\r\nkatipo\r\nkdd-explorer\r\nkilroy\r\nknowledge\r\nkototoi\r\nkretrieve\r\nlabelgrabber\r\nlachesis\r\nlarbin\r\nlegs\r\nlibwww\r\nlinkalarm\r\nlink validator\r\nlinkscan\r\nlockon\r\nlwp\r\nlycos\r\nmagpie\r\nmantraagent\r\nmapoftheinternet\r\nmarvin/\r\nmattie\r\nmediafox\r\nmediapartners\r\nmercator\r\nmerzscope\r\nmicrosoft url control\r\nminirank\r\nmiva\r\nmj12\r\nmnogosearch\r\nmoget\r\nmonster\r\nmoose\r\nmotor\r\nmultitext\r\nmuncher\r\nmuscatferret\r\nmwd.search\r\nmyweb\r\nnajdi\r\nnameprotect\r\nnationaldirectory\r\nnazilla\r\nncsa beta\r\nnec-meshexplorer\r\nnederland.zoek\r\nnetcarta webmap engine\r\nnetmechanic\r\nnetresearchserver\r\nnetscoop\r\nnewscan-online\r\nnhse\r\nnokia6682/\r\nnomad\r\nnoyona\r\nnutch\r\nnzexplorer\r\nobjectssearch\r\noccam\r\nomni\r\nopen text\r\nopenfind\r\nopenintelligencedata\r\norb search\r\nosis-project\r\npack rat\r\npageboy\r\npagebull\r\npage_verifier\r\npanscient\r\nparasite\r\npartnersite\r\npatric\r\npear.\r\npegasus\r\nperegrinator\r\npgp key agent\r\nphantom\r\nphpdig\r\npicosearch\r\npiltdownman\r\npimptrain\r\npinpoint\r\npioneer\r\npiranha\r\nplumtreewebaccessor\r\npogodak\r\npoirot\r\npompos\r\npoppelsdorf\r\npoppi\r\npopular iconoclast\r\npsycheclone\r\npublisher\r\npython\r\nrambler\r\nraven search\r\nroach\r\nroad runner\r\nroadhouse\r\nrobbie\r\nrobofox\r\nrobozilla\r\nrules\r\nsalty\r\nsbider\r\nscooter\r\nscoutjet\r\nscrubby\r\nsearch.\r\nsearchprocess\r\nsemanticdiscovery\r\nsenrigan\r\nsg-scout\r\nshai''hulud\r\nshark\r\nshopwiki\r\nsidewinder\r\nsift\r\nsilk\r\nsimmany\r\nsite searcher\r\nsite valet\r\nsitetech-rover\r\nskymob.com\r\nsleek\r\nsmartwit\r\nsna-\r\nsnappy\r\nsnooper\r\nsohu\r\nspeedfind\r\nsphere\r\nsphider\r\nspinner\r\nspyder\r\nsteeler/\r\nsuke\r\nsuntek\r\nsupersnooper\r\nsurfnomore\r\nsven\r\nsygol\r\nszukacz\r\ntach black widow\r\ntarantula\r\ntempleton\r\n/teoma\r\nt-h-u-n-d-e-r-s-t-o-n-e\r\ntheophrastus\r\ntitan\r\ntitin\r\ntkwww\r\ntoutatis\r\nt-rex\r\ntutorgig\r\ntwiceler\r\ntwisted\r\nucsd\r\nudmsearch\r\nurl check\r\nupdated\r\nvagabondo\r\nvalkyrie\r\nverticrawl\r\nvictoria\r\nvision-search\r\nvolcano\r\nvoyager/\r\nvoyager-hc\r\nw3c_validator\r\nw3m2\r\nw3mir\r\nwalker\r\nwallpaper\r\nwanderer\r\nwauuu\r\nwavefire\r\nweb core\r\nweb hopper\r\nweb wombat\r\nwebbandit\r\nwebcatcher\r\nwebcopy\r\nwebfoot\r\nweblayers\r\nweblinker\r\nweblog monitor\r\nwebmirror\r\nwebmonkey\r\nwebquest\r\nwebreaper\r\nwebsitepulse\r\nwebsnarf\r\nwebstolperer\r\nwebvac\r\nwebwalk\r\nwebwatch\r\nwebwombat\r\nwebzinger\r\nwhizbang\r\nwhowhere\r\nwild ferret\r\nworldlight\r\nwwwc\r\nwwwster\r\nxenu\r\nxget\r\nxift\r\nxirq\r\nyandex\r\nyanga\r\nyeti\r\nyodao\r\nzao\r\nzippp\r\nzyborg', 0),
-(1934, 0, 'config', 'config_shared', '0', 0),
-(1933, 0, 'config', 'config_secure', '0', 0),
-(1932, 0, 'config', 'config_fraud_status_id', '9', 0),
-(1931, 0, 'config', 'config_fraud_score', '', 0),
-(1930, 0, 'config', 'config_fraud_key', '', 0),
-(1929, 0, 'config', 'config_fraud_detection', '0', 0),
-(1928, 0, 'config', 'config_alert_emails', '', 0),
-(1927, 0, 'config', 'config_account_mail', '0', 0),
-(1926, 0, 'config', 'config_alert_mail', '0', 0),
-(1925, 0, 'config', 'config_smtp_timeout', '5', 0),
-(1924, 0, 'config', 'config_smtp_port', '25', 0),
-(1923, 0, 'config', 'config_smtp_password', '', 0),
-(1922, 0, 'config', 'config_smtp_username', '', 0),
-(1921, 0, 'config', 'config_smtp_host', '', 0),
-(1920, 0, 'config', 'config_mail_parameter', '', 0),
-(1919, 0, 'config', 'config_mail_protocol', 'smtp', 0),
-(1918, 0, 'config', 'config_ftp_status', '0', 0),
-(1917, 0, 'config', 'config_ftp_root', '', 0),
-(1916, 0, 'config', 'config_ftp_password', '', 0),
-(1915, 0, 'config', 'config_ftp_username', '', 0),
-(1914, 0, 'config', 'config_ftp_port', '21', 0),
-(1913, 0, 'config', 'config_ftp_host', 't.te168.cn', 0),
-(1912, 0, 'config', 'config_image_cart_height', '47', 0),
-(1911, 0, 'config', 'config_image_cart_width', '47', 0),
-(1910, 0, 'config', 'config_image_wishlist_height', '47', 0),
-(1909, 0, 'config', 'config_image_wishlist_width', '47', 0),
-(1908, 0, 'config', 'config_image_compare_height', '90', 0),
-(1907, 0, 'config', 'config_image_compare_width', '90', 0),
-(1906, 0, 'config', 'config_image_related_height', '80', 0),
-(1905, 0, 'config', 'config_image_related_width', '80', 0),
-(1904, 0, 'config', 'config_image_additional_height', '74', 0),
-(1903, 0, 'config', 'config_image_additional_width', '74', 0),
-(1902, 0, 'config', 'config_image_product_height', '180', 0),
-(1901, 0, 'config', 'config_image_product_width', '180', 0),
-(1900, 0, 'config', 'config_image_popup_height', '640', 0),
-(1899, 0, 'config', 'config_image_popup_width', '700', 0),
-(1898, 0, 'config', 'config_image_thumb_height', '510', 0),
-(1897, 0, 'config', 'config_image_thumb_width', '510', 0),
-(1896, 0, 'config', 'config_image_category_height', '80', 0),
-(1892, 0, 'config', 'config_return_status_id', '2', 0),
-(1893, 0, 'config', 'config_logo', 'data/logo.png', 0),
-(1894, 0, 'config', 'config_icon', 'data/cart.png', 0),
-(1895, 0, 'config', 'config_image_category_width', '80', 0),
-(1891, 0, 'config', 'config_return_id', '0', 0),
-(1890, 0, 'config', 'config_commission', '5', 0),
-(1889, 0, 'config', 'config_affiliate_id', '4', 0),
-(1888, 0, 'config', 'config_stock_status_id', '7', 0),
-(1887, 0, 'config', 'config_stock_checkout', '0', 0),
-(1886, 0, 'config', 'config_stock_warning', '0', 0),
-(1885, 0, 'config', 'config_stock_display', '0', 0),
-(1884, 0, 'config', 'config_complete_status_id', '5', 0),
-(1883, 0, 'config', 'config_order_status_id', '1', 0),
-(1882, 0, 'config', 'config_invoice_prefix', 'INV-2013-00', 0),
-(1881, 0, 'config', 'config_order_edit', '100', 0),
-(1880, 0, 'config', 'config_checkout_id', '0', 0),
-(1879, 0, 'config', 'config_guest_checkout', '0', 0),
-(1878, 0, 'config', 'config_cart_weight', '0', 0),
-(1877, 0, 'config', 'config_account_id', '3', 0),
-(1876, 0, 'config', 'config_customer_price', '0', 0),
-(1875, 0, 'config', 'config_customer_group_display', 'a:1:{i:0;s:1:"1";}', 1),
-(1874, 0, 'config', 'config_customer_group_id', '1', 0),
-(1873, 0, 'config', 'config_customer_online', '0', 0),
-(1872, 0, 'config', 'config_tax_customer', '', 0),
-(1871, 0, 'config', 'config_tax_default', '', 0),
-(1870, 0, 'config', 'config_vat', '0', 0),
-(1869, 0, 'config', 'config_tax', '1', 0),
-(1868, 0, 'config', 'config_voucher_max', '1000', 0),
-(1867, 0, 'config', 'config_voucher_min', '1', 0),
-(1866, 0, 'config', 'config_download', '0', 0),
-(1865, 0, 'config', 'config_review_status', '1', 0),
-(1864, 0, 'config', 'config_product_count', '1', 0),
-(1863, 0, 'config', 'config_admin_limit', '20', 0),
-(1862, 0, 'config', 'config_catalog_limit', '16', 0),
-(1861, 0, 'config', 'config_weight_class_id', '1', 0),
-(1860, 0, 'config', 'config_length_class_id', '1', 0),
-(1859, 0, 'config', 'config_currency_auto', '0', 0),
-(1856, 0, 'config', 'config_language', 'zh-CN', 0),
-(1857, 0, 'config', 'config_admin_language', 'zh-CN', 0),
-(1858, 0, 'config', 'config_currency', 'CNY', 0),
-(1855, 0, 'config', 'config_zone_id', '', 0),
-(1853, 0, 'config', 'config_layout_id', '4', 0),
-(1854, 0, 'config', 'config_country_id', '44', 0),
-(1850, 0, 'config', 'config_title', '生命方舟', 0),
-(1851, 0, 'config', 'config_meta_description', '生命方舟', 0),
-(1852, 0, 'config', 'config_template', 'default', 0),
-(1849, 0, 'config', 'config_fax', '', 0),
-(1848, 0, 'config', 'config_telephone', '123456789', 0),
-(1847, 0, 'config', 'config_email', 'wangte168@sina.com', 0),
-(1846, 0, 'config', 'config_address', 'Address 1', 0),
-(1845, 0, 'config', 'config_owner', '生命方舟', 0),
-(1844, 0, 'config', 'config_name', '生命方舟', 0),
+(2368, 0, 'config', 'config_secure', '0', 0),
+(2369, 0, 'config', 'config_shared', '0', 0),
+(2370, 0, 'config', 'config_robots', 'abot\r\ndbot\r\nebot\r\nhbot\r\nkbot\r\nlbot\r\nmbot\r\nnbot\r\nobot\r\npbot\r\nrbot\r\nsbot\r\ntbot\r\nvbot\r\nybot\r\nzbot\r\nbot.\r\nbot/\r\n_bot\r\n.bot\r\n/bot\r\n-bot\r\n:bot\r\n(bot\r\ncrawl\r\nslurp\r\nspider\r\nseek\r\naccoona\r\nacoon\r\nadressendeutschland\r\nah-ha.com\r\nahoy\r\naltavista\r\nananzi\r\nanthill\r\nappie\r\narachnophilia\r\narale\r\naraneo\r\naranha\r\narchitext\r\naretha\r\narks\r\nasterias\r\natlocal\r\natn\r\natomz\r\naugurfind\r\nbackrub\r\nbannana_bot\r\nbaypup\r\nbdfetch\r\nbig brother\r\nbiglotron\r\nbjaaland\r\nblackwidow\r\nblaiz\r\nblog\r\nblo.\r\nbloodhound\r\nboitho\r\nbooch\r\nbradley\r\nbutterfly\r\ncalif\r\ncassandra\r\nccubee\r\ncfetch\r\ncharlotte\r\nchurl\r\ncienciaficcion\r\ncmc\r\ncollective\r\ncomagent\r\ncombine\r\ncomputingsite\r\ncsci\r\ncurl\r\ncusco\r\ndaumoa\r\ndeepindex\r\ndelorie\r\ndepspid\r\ndeweb\r\ndie blinde kuh\r\ndigger\r\nditto\r\ndmoz\r\ndocomo\r\ndownload express\r\ndtaagent\r\ndwcp\r\nebiness\r\nebingbong\r\ne-collector\r\nejupiter\r\nemacs-w3 search engine\r\nesther\r\nevliya celebi\r\nezresult\r\nfalcon\r\nfelix ide\r\nferret\r\nfetchrover\r\nfido\r\nfindlinks\r\nfireball\r\nfish search\r\nfouineur\r\nfunnelweb\r\ngazz\r\ngcreep\r\ngenieknows\r\ngetterroboplus\r\ngeturl\r\nglx\r\ngoforit\r\ngolem\r\ngrabber\r\ngrapnel\r\ngralon\r\ngriffon\r\ngromit\r\ngrub\r\ngulliver\r\nhamahakki\r\nharvest\r\nhavindex\r\nhelix\r\nheritrix\r\nhku www octopus\r\nhomerweb\r\nhtdig\r\nhtml index\r\nhtml_analyzer\r\nhtmlgobble\r\nhubater\r\nhyper-decontextualizer\r\nia_archiver\r\nibm_planetwide\r\nichiro\r\niconsurf\r\niltrovatore\r\nimage.kapsi.net\r\nimagelock\r\nincywincy\r\nindexer\r\ninfobee\r\ninformant\r\ningrid\r\ninktomisearch.com\r\ninspector web\r\nintelliagent\r\ninternet shinchakubin\r\nip3000\r\niron33\r\nisraeli-search\r\nivia\r\njack\r\njakarta\r\njavabee\r\njetbot\r\njumpstation\r\nkatipo\r\nkdd-explorer\r\nkilroy\r\nknowledge\r\nkototoi\r\nkretrieve\r\nlabelgrabber\r\nlachesis\r\nlarbin\r\nlegs\r\nlibwww\r\nlinkalarm\r\nlink validator\r\nlinkscan\r\nlockon\r\nlwp\r\nlycos\r\nmagpie\r\nmantraagent\r\nmapoftheinternet\r\nmarvin/\r\nmattie\r\nmediafox\r\nmediapartners\r\nmercator\r\nmerzscope\r\nmicrosoft url control\r\nminirank\r\nmiva\r\nmj12\r\nmnogosearch\r\nmoget\r\nmonster\r\nmoose\r\nmotor\r\nmultitext\r\nmuncher\r\nmuscatferret\r\nmwd.search\r\nmyweb\r\nnajdi\r\nnameprotect\r\nnationaldirectory\r\nnazilla\r\nncsa beta\r\nnec-meshexplorer\r\nnederland.zoek\r\nnetcarta webmap engine\r\nnetmechanic\r\nnetresearchserver\r\nnetscoop\r\nnewscan-online\r\nnhse\r\nnokia6682/\r\nnomad\r\nnoyona\r\nnutch\r\nnzexplorer\r\nobjectssearch\r\noccam\r\nomni\r\nopen text\r\nopenfind\r\nopenintelligencedata\r\norb search\r\nosis-project\r\npack rat\r\npageboy\r\npagebull\r\npage_verifier\r\npanscient\r\nparasite\r\npartnersite\r\npatric\r\npear.\r\npegasus\r\nperegrinator\r\npgp key agent\r\nphantom\r\nphpdig\r\npicosearch\r\npiltdownman\r\npimptrain\r\npinpoint\r\npioneer\r\npiranha\r\nplumtreewebaccessor\r\npogodak\r\npoirot\r\npompos\r\npoppelsdorf\r\npoppi\r\npopular iconoclast\r\npsycheclone\r\npublisher\r\npython\r\nrambler\r\nraven search\r\nroach\r\nroad runner\r\nroadhouse\r\nrobbie\r\nrobofox\r\nrobozilla\r\nrules\r\nsalty\r\nsbider\r\nscooter\r\nscoutjet\r\nscrubby\r\nsearch.\r\nsearchprocess\r\nsemanticdiscovery\r\nsenrigan\r\nsg-scout\r\nshai''hulud\r\nshark\r\nshopwiki\r\nsidewinder\r\nsift\r\nsilk\r\nsimmany\r\nsite searcher\r\nsite valet\r\nsitetech-rover\r\nskymob.com\r\nsleek\r\nsmartwit\r\nsna-\r\nsnappy\r\nsnooper\r\nsohu\r\nspeedfind\r\nsphere\r\nsphider\r\nspinner\r\nspyder\r\nsteeler/\r\nsuke\r\nsuntek\r\nsupersnooper\r\nsurfnomore\r\nsven\r\nsygol\r\nszukacz\r\ntach black widow\r\ntarantula\r\ntempleton\r\n/teoma\r\nt-h-u-n-d-e-r-s-t-o-n-e\r\ntheophrastus\r\ntitan\r\ntitin\r\ntkwww\r\ntoutatis\r\nt-rex\r\ntutorgig\r\ntwiceler\r\ntwisted\r\nucsd\r\nudmsearch\r\nurl check\r\nupdated\r\nvagabondo\r\nvalkyrie\r\nverticrawl\r\nvictoria\r\nvision-search\r\nvolcano\r\nvoyager/\r\nvoyager-hc\r\nw3c_validator\r\nw3m2\r\nw3mir\r\nwalker\r\nwallpaper\r\nwanderer\r\nwauuu\r\nwavefire\r\nweb core\r\nweb hopper\r\nweb wombat\r\nwebbandit\r\nwebcatcher\r\nwebcopy\r\nwebfoot\r\nweblayers\r\nweblinker\r\nweblog monitor\r\nwebmirror\r\nwebmonkey\r\nwebquest\r\nwebreaper\r\nwebsitepulse\r\nwebsnarf\r\nwebstolperer\r\nwebvac\r\nwebwalk\r\nwebwatch\r\nwebwombat\r\nwebzinger\r\nwhizbang\r\nwhowhere\r\nwild ferret\r\nworldlight\r\nwwwc\r\nwwwster\r\nxenu\r\nxget\r\nxift\r\nxirq\r\nyandex\r\nyanga\r\nyeti\r\nyodao\r\nzao\r\nzippp\r\nzyborg', 0),
+(2371, 0, 'config', 'config_seo_url', '0', 0),
+(2372, 0, 'config', 'config_file_extension_allowed', 'txt\r\npng\r\njpe\r\njpeg\r\njpg\r\ngif\r\nbmp\r\nico\r\ntiff\r\ntif\r\nsvg\r\nsvgz\r\nzip\r\nrar\r\nmsi\r\ncab\r\nmp3\r\nqt\r\nmov\r\npdf\r\npsd\r\nai\r\neps\r\nps\r\ndoc\r\nrtf\r\nxls\r\nppt\r\nodt\r\nods', 0),
+(2367, 0, 'config', 'config_fraud_status_id', '9', 0),
+(2366, 0, 'config', 'config_fraud_score', '', 0),
+(2365, 0, 'config', 'config_fraud_key', '', 0),
+(2364, 0, 'config', 'config_fraud_detection', '0', 0),
+(2363, 0, 'config', 'config_alert_emails', '', 0),
+(2362, 0, 'config', 'config_account_mail', '0', 0),
+(2361, 0, 'config', 'config_alert_mail', '0', 0),
+(2360, 0, 'config', 'config_smtp_timeout', '5', 0),
+(2359, 0, 'config', 'config_smtp_port', '25', 0),
+(2358, 0, 'config', 'config_smtp_password', '', 0),
+(2357, 0, 'config', 'config_smtp_username', '', 0),
+(2355, 0, 'config', 'config_mail_parameter', '', 0),
+(2356, 0, 'config', 'config_smtp_host', '', 0),
+(2354, 0, 'config', 'config_mail_protocol', 'mail', 0),
+(2353, 0, 'config', 'config_ftp_status', '0', 0),
+(2352, 0, 'config', 'config_ftp_root', '', 0),
+(2351, 0, 'config', 'config_ftp_password', '', 0),
+(2350, 0, 'config', 'config_ftp_username', '', 0),
+(2349, 0, 'config', 'config_ftp_port', '21', 0),
+(2348, 0, 'config', 'config_ftp_host', 't.te168.cn', 0),
+(2347, 0, 'config', 'config_image_cart_height', '47', 0),
+(2346, 0, 'config', 'config_image_cart_width', '47', 0),
+(2344, 0, 'config', 'config_image_wishlist_width', '47', 0),
+(2345, 0, 'config', 'config_image_wishlist_height', '47', 0),
+(2343, 0, 'config', 'config_image_compare_height', '90', 0),
+(2342, 0, 'config', 'config_image_compare_width', '90', 0),
+(2341, 0, 'config', 'config_image_related_height', '80', 0),
+(2340, 0, 'config', 'config_image_related_width', '80', 0),
+(2339, 0, 'config', 'config_image_additional_height', '74', 0),
+(2338, 0, 'config', 'config_image_additional_width', '74', 0),
+(2337, 0, 'config', 'config_image_product_height', '180', 0),
+(2336, 0, 'config', 'config_image_product_width', '180', 0),
+(2335, 0, 'config', 'config_image_popup_height', '640', 0),
+(2333, 0, 'config', 'config_image_thumb_height', '510', 0),
+(2334, 0, 'config', 'config_image_popup_width', '700', 0),
+(2332, 0, 'config', 'config_image_thumb_width', '510', 0),
+(2331, 0, 'config', 'config_image_category_height', '80', 0),
+(2328, 0, 'config', 'config_logo', 'data/logo.png', 0),
+(2329, 0, 'config', 'config_icon', 'data/cart.png', 0),
+(2330, 0, 'config', 'config_image_category_width', '80', 0),
+(2327, 0, 'config', 'config_return_status_id', '2', 0),
+(2325, 0, 'config', 'config_commission', '5', 0),
+(2326, 0, 'config', 'config_return_id', '0', 0),
+(2324, 0, 'config', 'config_affiliate_id', '4', 0),
+(2323, 0, 'config', 'config_stock_status_id', '7', 0),
+(2322, 0, 'config', 'config_stock_checkout', '0', 0),
+(2321, 0, 'config', 'config_stock_warning', '0', 0),
+(2320, 0, 'config', 'config_stock_display', '0', 0),
+(2319, 0, 'config', 'config_complete_status_id', '5', 0),
+(2318, 0, 'config', 'config_order_status_id', '1', 0),
+(2317, 0, 'config', 'config_invoice_prefix', 'INV-2013-00', 0),
+(2315, 0, 'config', 'config_checkout_id', '0', 0),
+(2316, 0, 'config', 'config_order_edit', '100', 0),
+(2314, 0, 'config', 'config_guest_checkout', '0', 0),
+(2313, 0, 'config', 'config_cart_weight', '0', 0),
 (477, 0, 'alipay', 'alipay_status', '1', 0),
-(478, 0, 'alipay', 'alipay_sort_order', '1', 0);
+(478, 0, 'alipay', 'alipay_sort_order', '1', 0),
+(1961, 0, 'yeepay', 'yeepay_status', '1', 0),
+(1960, 0, 'yeepay', 'yeepay_order_status_id', '13', 0),
+(1959, 0, 'yeepay', 'yeepay_merid', '123123saasdf', 0),
+(1958, 0, 'yeepay', 'yeepay_key', 'asdfasdfasdfasdfasdf', 0),
+(1962, 0, 'yeepay', 'yeepay_sort_order', '1', 0),
+(1963, 0, 'tenpay', 'tenpay_cmdno', '1', 0),
+(1964, 0, 'tenpay', 'tenpay_seller', '284297035', 0),
+(1965, 0, 'tenpay', 'tenpay_key', '324asdfasdfasdfasdf', 0),
+(1966, 0, 'tenpay', 'tenpay_bargainor_id', '123123123', 0),
+(1967, 0, 'tenpay', 'tenpay_order_status_id', '13', 0),
+(1968, 0, 'tenpay', 'tenpay_status', '1', 0),
+(1969, 0, 'tenpay', 'tenpay_sort_order', '1', 0),
+(2312, 0, 'config', 'config_account_id', '3', 0),
+(2311, 0, 'config', 'config_customer_price', '0', 0),
+(2310, 0, 'config', 'config_customer_group_display', 'a:1:{i:0;s:1:"1";}', 1),
+(2309, 0, 'config', 'config_customer_group_id', '1', 0),
+(2308, 0, 'config', 'config_customer_online', '0', 0),
+(2307, 0, 'config', 'config_tax_customer', '', 0),
+(2306, 0, 'config', 'config_tax_default', '', 0),
+(2305, 0, 'config', 'config_vat', '0', 0),
+(2304, 0, 'config', 'config_tax', '1', 0),
+(2303, 0, 'config', 'config_voucher_max', '1000', 0),
+(2302, 0, 'config', 'config_voucher_min', '1', 0),
+(2301, 0, 'config', 'config_download', '0', 0),
+(2300, 0, 'config', 'config_review_status', '1', 0),
+(2299, 0, 'config', 'config_product_count', '1', 0),
+(2297, 0, 'config', 'config_catalog_limit', '16', 0),
+(2298, 0, 'config', 'config_admin_limit', '20', 0),
+(2294, 0, 'config', 'config_currency_auto', '0', 0),
+(2295, 0, 'config', 'config_length_class_id', '1', 0),
+(2296, 0, 'config', 'config_weight_class_id', '1', 0),
+(2293, 0, 'config', 'config_currency', 'CNY', 0),
+(2284, 0, 'config', 'config_fax', '', 0),
+(2285, 0, 'config', 'config_title', '生命方舟', 0),
+(2286, 0, 'config', 'config_meta_description', '生命方舟', 0),
+(2287, 0, 'config', 'config_template', 'default', 0),
+(2288, 0, 'config', 'config_layout_id', '4', 0),
+(2289, 0, 'config', 'config_country_id', '44', 0),
+(2290, 0, 'config', 'config_zone_id', '', 0),
+(2291, 0, 'config', 'config_language', 'zh-CN', 0),
+(2292, 0, 'config', 'config_admin_language', 'zh-CN', 0),
+(2283, 0, 'config', 'config_telephone', '123456789', 0),
+(2282, 0, 'config', 'config_email', 'wangte168@sina.com', 0),
+(2281, 0, 'config', 'config_address', 'Address 1', 0),
+(2279, 0, 'config', 'config_name', '生命方舟', 0),
+(2280, 0, 'config', 'config_owner', '生命方舟', 0),
+(2381, 0, 'config', 'config_google_analytics', '', 0);
 
 -- --------------------------------------------------------
 
@@ -2525,6 +2770,11 @@ CREATE TABLE IF NOT EXISTS `oc_store` (
   `ssl` varchar(255) NOT NULL,
   PRIMARY KEY (`store_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+
+--
+-- 转存表中的数据 `oc_store`
+--
+
 
 -- --------------------------------------------------------
 
@@ -2667,7 +2917,7 @@ CREATE TABLE IF NOT EXISTS `oc_user` (
 --
 
 INSERT INTO `oc_user` (`user_id`, `user_group_id`, `username`, `password`, `salt`, `firstname`, `lastname`, `email`, `code`, `ip`, `status`, `date_added`) VALUES
-(1, 1, 'admin', '2755118caf3b9bef8eaf23ef6c12e526586b4042', '1f3b75c57', '', '', 'wangte168@sina.com', '', '127.0.0.1', 1, '2013-12-03 14:57:16');
+(1, 1, 'admin', '2755118caf3b9bef8eaf23ef6c12e526586b4042', '1f3b75c57', '', '', 'wangte168@sina.com', '', '202.204.81.57', 1, '2013-12-03 14:57:16');
 
 -- --------------------------------------------------------
 
@@ -2687,7 +2937,7 @@ CREATE TABLE IF NOT EXISTS `oc_user_group` (
 --
 
 INSERT INTO `oc_user_group` (`user_group_id`, `name`, `permission`) VALUES
-(1, 'Top Administrator', 'a:2:{s:6:"access";a:131:{i:0;s:17:"catalog/attribute";i:1;s:23:"catalog/attribute_group";i:2;s:16:"catalog/category";i:3;s:16:"catalog/download";i:4;s:14:"catalog/filter";i:5;s:19:"catalog/information";i:6;s:20:"catalog/manufacturer";i:7;s:14:"catalog/option";i:8;s:15:"catalog/product";i:9;s:14:"catalog/review";i:10;s:18:"common/filemanager";i:11;s:13:"design/banner";i:12;s:13:"design/layout";i:13;s:14:"extension/feed";i:14;s:17:"extension/manager";i:15;s:16:"extension/module";i:16;s:17:"extension/payment";i:17;s:18:"extension/shipping";i:18;s:15:"extension/total";i:19;s:16:"feed/google_base";i:20;s:19:"feed/google_sitemap";i:21;s:20:"localisation/country";i:22;s:21:"localisation/currency";i:23;s:21:"localisation/geo_zone";i:24;s:21:"localisation/language";i:25;s:25:"localisation/length_class";i:26;s:25:"localisation/order_status";i:27;s:26:"localisation/return_action";i:28;s:26:"localisation/return_reason";i:29;s:26:"localisation/return_status";i:30;s:25:"localisation/stock_status";i:31;s:22:"localisation/tax_class";i:32;s:21:"localisation/tax_rate";i:33;s:25:"localisation/weight_class";i:34;s:17:"localisation/zone";i:35;s:14:"module/account";i:36;s:16:"module/affiliate";i:37;s:13:"module/banner";i:38;s:17:"module/bestseller";i:39;s:15:"module/carousel";i:40;s:15:"module/category";i:41;s:15:"module/featured";i:42;s:13:"module/filter";i:43;s:18:"module/google_talk";i:44;s:18:"module/information";i:45;s:13:"module/latest";i:46;s:16:"module/slideshow";i:47;s:14:"module/special";i:48;s:12:"module/store";i:49;s:14:"module/welcome";i:50;s:24:"payment/authorizenet_aim";i:51;s:21:"payment/bank_transfer";i:52;s:14:"payment/cheque";i:53;s:11:"payment/cod";i:54;s:21:"payment/free_checkout";i:55;s:14:"payment/liqpay";i:56;s:20:"payment/moneybookers";i:57;s:14:"payment/nochex";i:58;s:15:"payment/paymate";i:59;s:16:"payment/paypoint";i:60;s:13:"payment/payza";i:61;s:26:"payment/perpetual_payments";i:62;s:14:"payment/pp_pro";i:63;s:17:"payment/pp_pro_uk";i:64;s:19:"payment/pp_standard";i:65;s:15:"payment/sagepay";i:66;s:22:"payment/sagepay_direct";i:67;s:18:"payment/sagepay_us";i:68;s:19:"payment/twocheckout";i:69;s:28:"payment/web_payment_software";i:70;s:16:"payment/worldpay";i:71;s:27:"report/affiliate_commission";i:72;s:22:"report/customer_credit";i:73;s:22:"report/customer_online";i:74;s:21:"report/customer_order";i:75;s:22:"report/customer_reward";i:76;s:24:"report/product_purchased";i:77;s:21:"report/product_viewed";i:78;s:18:"report/sale_coupon";i:79;s:17:"report/sale_order";i:80;s:18:"report/sale_return";i:81;s:20:"report/sale_shipping";i:82;s:15:"report/sale_tax";i:83;s:14:"sale/affiliate";i:84;s:12:"sale/contact";i:85;s:11:"sale/coupon";i:86;s:13:"sale/customer";i:87;s:20:"sale/customer_ban_ip";i:88;s:19:"sale/customer_group";i:89;s:10:"sale/order";i:90;s:11:"sale/return";i:91;s:12:"sale/voucher";i:92;s:18:"sale/voucher_theme";i:93;s:15:"setting/setting";i:94;s:13:"setting/store";i:95;s:16:"shipping/auspost";i:96;s:17:"shipping/citylink";i:97;s:14:"shipping/fedex";i:98;s:13:"shipping/flat";i:99;s:13:"shipping/free";i:100;s:13:"shipping/item";i:101;s:23:"shipping/parcelforce_48";i:102;s:15:"shipping/pickup";i:103;s:19:"shipping/royal_mail";i:104;s:12:"shipping/ups";i:105;s:13:"shipping/usps";i:106;s:15:"shipping/weight";i:107;s:11:"tool/backup";i:108;s:14:"tool/error_log";i:109;s:12:"total/coupon";i:110;s:12:"total/credit";i:111;s:14:"total/handling";i:112;s:16:"total/klarna_fee";i:113;s:19:"total/low_order_fee";i:114;s:12:"total/reward";i:115;s:14:"total/shipping";i:116;s:15:"total/sub_total";i:117;s:9:"total/tax";i:118;s:11:"total/total";i:119;s:13:"total/voucher";i:120;s:9:"user/user";i:121;s:20:"user/user_permission";i:122;s:14:"module/account";i:123;s:14:"payment/alipay";i:124;s:13:"module/filter";i:125;s:14:"module/welcome";i:126;s:18:"module/information";i:127;s:14:"total/shipping";i:128;s:11:"total/total";i:129;s:13:"shipping/flat";i:130;s:13:"shipping/free";}s:6:"modify";a:131:{i:0;s:17:"catalog/attribute";i:1;s:23:"catalog/attribute_group";i:2;s:16:"catalog/category";i:3;s:16:"catalog/download";i:4;s:14:"catalog/filter";i:5;s:19:"catalog/information";i:6;s:20:"catalog/manufacturer";i:7;s:14:"catalog/option";i:8;s:15:"catalog/product";i:9;s:14:"catalog/review";i:10;s:18:"common/filemanager";i:11;s:13:"design/banner";i:12;s:13:"design/layout";i:13;s:14:"extension/feed";i:14;s:17:"extension/manager";i:15;s:16:"extension/module";i:16;s:17:"extension/payment";i:17;s:18:"extension/shipping";i:18;s:15:"extension/total";i:19;s:16:"feed/google_base";i:20;s:19:"feed/google_sitemap";i:21;s:20:"localisation/country";i:22;s:21:"localisation/currency";i:23;s:21:"localisation/geo_zone";i:24;s:21:"localisation/language";i:25;s:25:"localisation/length_class";i:26;s:25:"localisation/order_status";i:27;s:26:"localisation/return_action";i:28;s:26:"localisation/return_reason";i:29;s:26:"localisation/return_status";i:30;s:25:"localisation/stock_status";i:31;s:22:"localisation/tax_class";i:32;s:21:"localisation/tax_rate";i:33;s:25:"localisation/weight_class";i:34;s:17:"localisation/zone";i:35;s:14:"module/account";i:36;s:16:"module/affiliate";i:37;s:13:"module/banner";i:38;s:17:"module/bestseller";i:39;s:15:"module/carousel";i:40;s:15:"module/category";i:41;s:15:"module/featured";i:42;s:13:"module/filter";i:43;s:18:"module/google_talk";i:44;s:18:"module/information";i:45;s:13:"module/latest";i:46;s:16:"module/slideshow";i:47;s:14:"module/special";i:48;s:12:"module/store";i:49;s:14:"module/welcome";i:50;s:24:"payment/authorizenet_aim";i:51;s:21:"payment/bank_transfer";i:52;s:14:"payment/cheque";i:53;s:11:"payment/cod";i:54;s:21:"payment/free_checkout";i:55;s:14:"payment/liqpay";i:56;s:20:"payment/moneybookers";i:57;s:14:"payment/nochex";i:58;s:15:"payment/paymate";i:59;s:16:"payment/paypoint";i:60;s:13:"payment/payza";i:61;s:26:"payment/perpetual_payments";i:62;s:14:"payment/pp_pro";i:63;s:17:"payment/pp_pro_uk";i:64;s:19:"payment/pp_standard";i:65;s:15:"payment/sagepay";i:66;s:22:"payment/sagepay_direct";i:67;s:18:"payment/sagepay_us";i:68;s:19:"payment/twocheckout";i:69;s:28:"payment/web_payment_software";i:70;s:16:"payment/worldpay";i:71;s:27:"report/affiliate_commission";i:72;s:22:"report/customer_credit";i:73;s:22:"report/customer_online";i:74;s:21:"report/customer_order";i:75;s:22:"report/customer_reward";i:76;s:24:"report/product_purchased";i:77;s:21:"report/product_viewed";i:78;s:18:"report/sale_coupon";i:79;s:17:"report/sale_order";i:80;s:18:"report/sale_return";i:81;s:20:"report/sale_shipping";i:82;s:15:"report/sale_tax";i:83;s:14:"sale/affiliate";i:84;s:12:"sale/contact";i:85;s:11:"sale/coupon";i:86;s:13:"sale/customer";i:87;s:20:"sale/customer_ban_ip";i:88;s:19:"sale/customer_group";i:89;s:10:"sale/order";i:90;s:11:"sale/return";i:91;s:12:"sale/voucher";i:92;s:18:"sale/voucher_theme";i:93;s:15:"setting/setting";i:94;s:13:"setting/store";i:95;s:16:"shipping/auspost";i:96;s:17:"shipping/citylink";i:97;s:14:"shipping/fedex";i:98;s:13:"shipping/flat";i:99;s:13:"shipping/free";i:100;s:13:"shipping/item";i:101;s:23:"shipping/parcelforce_48";i:102;s:15:"shipping/pickup";i:103;s:19:"shipping/royal_mail";i:104;s:12:"shipping/ups";i:105;s:13:"shipping/usps";i:106;s:15:"shipping/weight";i:107;s:11:"tool/backup";i:108;s:14:"tool/error_log";i:109;s:12:"total/coupon";i:110;s:12:"total/credit";i:111;s:14:"total/handling";i:112;s:16:"total/klarna_fee";i:113;s:19:"total/low_order_fee";i:114;s:12:"total/reward";i:115;s:14:"total/shipping";i:116;s:15:"total/sub_total";i:117;s:9:"total/tax";i:118;s:11:"total/total";i:119;s:13:"total/voucher";i:120;s:9:"user/user";i:121;s:20:"user/user_permission";i:122;s:14:"module/account";i:123;s:14:"payment/alipay";i:124;s:13:"module/filter";i:125;s:14:"module/welcome";i:126;s:18:"module/information";i:127;s:14:"total/shipping";i:128;s:11:"total/total";i:129;s:13:"shipping/flat";i:130;s:13:"shipping/free";}}'),
+(1, 'Top Administrator', 'a:2:{s:6:"access";a:133:{i:0;s:17:"catalog/attribute";i:1;s:23:"catalog/attribute_group";i:2;s:16:"catalog/category";i:3;s:16:"catalog/download";i:4;s:14:"catalog/filter";i:5;s:19:"catalog/information";i:6;s:20:"catalog/manufacturer";i:7;s:14:"catalog/option";i:8;s:15:"catalog/product";i:9;s:14:"catalog/review";i:10;s:18:"common/filemanager";i:11;s:13:"design/banner";i:12;s:13:"design/layout";i:13;s:14:"extension/feed";i:14;s:17:"extension/manager";i:15;s:16:"extension/module";i:16;s:17:"extension/payment";i:17;s:18:"extension/shipping";i:18;s:15:"extension/total";i:19;s:16:"feed/google_base";i:20;s:19:"feed/google_sitemap";i:21;s:20:"localisation/country";i:22;s:21:"localisation/currency";i:23;s:21:"localisation/geo_zone";i:24;s:21:"localisation/language";i:25;s:25:"localisation/length_class";i:26;s:25:"localisation/order_status";i:27;s:26:"localisation/return_action";i:28;s:26:"localisation/return_reason";i:29;s:26:"localisation/return_status";i:30;s:25:"localisation/stock_status";i:31;s:22:"localisation/tax_class";i:32;s:21:"localisation/tax_rate";i:33;s:25:"localisation/weight_class";i:34;s:17:"localisation/zone";i:35;s:14:"module/account";i:36;s:16:"module/affiliate";i:37;s:13:"module/banner";i:38;s:17:"module/bestseller";i:39;s:15:"module/carousel";i:40;s:15:"module/category";i:41;s:15:"module/featured";i:42;s:13:"module/filter";i:43;s:18:"module/google_talk";i:44;s:18:"module/information";i:45;s:13:"module/latest";i:46;s:16:"module/slideshow";i:47;s:14:"module/special";i:48;s:12:"module/store";i:49;s:14:"module/welcome";i:50;s:24:"payment/authorizenet_aim";i:51;s:21:"payment/bank_transfer";i:52;s:14:"payment/cheque";i:53;s:11:"payment/cod";i:54;s:21:"payment/free_checkout";i:55;s:14:"payment/liqpay";i:56;s:20:"payment/moneybookers";i:57;s:14:"payment/nochex";i:58;s:15:"payment/paymate";i:59;s:16:"payment/paypoint";i:60;s:13:"payment/payza";i:61;s:26:"payment/perpetual_payments";i:62;s:14:"payment/pp_pro";i:63;s:17:"payment/pp_pro_uk";i:64;s:19:"payment/pp_standard";i:65;s:15:"payment/sagepay";i:66;s:22:"payment/sagepay_direct";i:67;s:18:"payment/sagepay_us";i:68;s:19:"payment/twocheckout";i:69;s:28:"payment/web_payment_software";i:70;s:16:"payment/worldpay";i:71;s:27:"report/affiliate_commission";i:72;s:22:"report/customer_credit";i:73;s:22:"report/customer_online";i:74;s:21:"report/customer_order";i:75;s:22:"report/customer_reward";i:76;s:24:"report/product_purchased";i:77;s:21:"report/product_viewed";i:78;s:18:"report/sale_coupon";i:79;s:17:"report/sale_order";i:80;s:18:"report/sale_return";i:81;s:20:"report/sale_shipping";i:82;s:15:"report/sale_tax";i:83;s:14:"sale/affiliate";i:84;s:12:"sale/contact";i:85;s:11:"sale/coupon";i:86;s:13:"sale/customer";i:87;s:20:"sale/customer_ban_ip";i:88;s:19:"sale/customer_group";i:89;s:10:"sale/order";i:90;s:11:"sale/return";i:91;s:12:"sale/voucher";i:92;s:18:"sale/voucher_theme";i:93;s:15:"setting/setting";i:94;s:13:"setting/store";i:95;s:16:"shipping/auspost";i:96;s:17:"shipping/citylink";i:97;s:14:"shipping/fedex";i:98;s:13:"shipping/flat";i:99;s:13:"shipping/free";i:100;s:13:"shipping/item";i:101;s:23:"shipping/parcelforce_48";i:102;s:15:"shipping/pickup";i:103;s:19:"shipping/royal_mail";i:104;s:12:"shipping/ups";i:105;s:13:"shipping/usps";i:106;s:15:"shipping/weight";i:107;s:11:"tool/backup";i:108;s:14:"tool/error_log";i:109;s:12:"total/coupon";i:110;s:12:"total/credit";i:111;s:14:"total/handling";i:112;s:16:"total/klarna_fee";i:113;s:19:"total/low_order_fee";i:114;s:12:"total/reward";i:115;s:14:"total/shipping";i:116;s:15:"total/sub_total";i:117;s:9:"total/tax";i:118;s:11:"total/total";i:119;s:13:"total/voucher";i:120;s:9:"user/user";i:121;s:20:"user/user_permission";i:122;s:14:"module/account";i:123;s:14:"payment/alipay";i:124;s:13:"module/filter";i:125;s:14:"module/welcome";i:126;s:18:"module/information";i:127;s:14:"total/shipping";i:128;s:11:"total/total";i:129;s:13:"shipping/flat";i:130;s:13:"shipping/free";i:131;s:14:"payment/tenpay";i:132;s:14:"payment/yeepay";}s:6:"modify";a:133:{i:0;s:17:"catalog/attribute";i:1;s:23:"catalog/attribute_group";i:2;s:16:"catalog/category";i:3;s:16:"catalog/download";i:4;s:14:"catalog/filter";i:5;s:19:"catalog/information";i:6;s:20:"catalog/manufacturer";i:7;s:14:"catalog/option";i:8;s:15:"catalog/product";i:9;s:14:"catalog/review";i:10;s:18:"common/filemanager";i:11;s:13:"design/banner";i:12;s:13:"design/layout";i:13;s:14:"extension/feed";i:14;s:17:"extension/manager";i:15;s:16:"extension/module";i:16;s:17:"extension/payment";i:17;s:18:"extension/shipping";i:18;s:15:"extension/total";i:19;s:16:"feed/google_base";i:20;s:19:"feed/google_sitemap";i:21;s:20:"localisation/country";i:22;s:21:"localisation/currency";i:23;s:21:"localisation/geo_zone";i:24;s:21:"localisation/language";i:25;s:25:"localisation/length_class";i:26;s:25:"localisation/order_status";i:27;s:26:"localisation/return_action";i:28;s:26:"localisation/return_reason";i:29;s:26:"localisation/return_status";i:30;s:25:"localisation/stock_status";i:31;s:22:"localisation/tax_class";i:32;s:21:"localisation/tax_rate";i:33;s:25:"localisation/weight_class";i:34;s:17:"localisation/zone";i:35;s:14:"module/account";i:36;s:16:"module/affiliate";i:37;s:13:"module/banner";i:38;s:17:"module/bestseller";i:39;s:15:"module/carousel";i:40;s:15:"module/category";i:41;s:15:"module/featured";i:42;s:13:"module/filter";i:43;s:18:"module/google_talk";i:44;s:18:"module/information";i:45;s:13:"module/latest";i:46;s:16:"module/slideshow";i:47;s:14:"module/special";i:48;s:12:"module/store";i:49;s:14:"module/welcome";i:50;s:24:"payment/authorizenet_aim";i:51;s:21:"payment/bank_transfer";i:52;s:14:"payment/cheque";i:53;s:11:"payment/cod";i:54;s:21:"payment/free_checkout";i:55;s:14:"payment/liqpay";i:56;s:20:"payment/moneybookers";i:57;s:14:"payment/nochex";i:58;s:15:"payment/paymate";i:59;s:16:"payment/paypoint";i:60;s:13:"payment/payza";i:61;s:26:"payment/perpetual_payments";i:62;s:14:"payment/pp_pro";i:63;s:17:"payment/pp_pro_uk";i:64;s:19:"payment/pp_standard";i:65;s:15:"payment/sagepay";i:66;s:22:"payment/sagepay_direct";i:67;s:18:"payment/sagepay_us";i:68;s:19:"payment/twocheckout";i:69;s:28:"payment/web_payment_software";i:70;s:16:"payment/worldpay";i:71;s:27:"report/affiliate_commission";i:72;s:22:"report/customer_credit";i:73;s:22:"report/customer_online";i:74;s:21:"report/customer_order";i:75;s:22:"report/customer_reward";i:76;s:24:"report/product_purchased";i:77;s:21:"report/product_viewed";i:78;s:18:"report/sale_coupon";i:79;s:17:"report/sale_order";i:80;s:18:"report/sale_return";i:81;s:20:"report/sale_shipping";i:82;s:15:"report/sale_tax";i:83;s:14:"sale/affiliate";i:84;s:12:"sale/contact";i:85;s:11:"sale/coupon";i:86;s:13:"sale/customer";i:87;s:20:"sale/customer_ban_ip";i:88;s:19:"sale/customer_group";i:89;s:10:"sale/order";i:90;s:11:"sale/return";i:91;s:12:"sale/voucher";i:92;s:18:"sale/voucher_theme";i:93;s:15:"setting/setting";i:94;s:13:"setting/store";i:95;s:16:"shipping/auspost";i:96;s:17:"shipping/citylink";i:97;s:14:"shipping/fedex";i:98;s:13:"shipping/flat";i:99;s:13:"shipping/free";i:100;s:13:"shipping/item";i:101;s:23:"shipping/parcelforce_48";i:102;s:15:"shipping/pickup";i:103;s:19:"shipping/royal_mail";i:104;s:12:"shipping/ups";i:105;s:13:"shipping/usps";i:106;s:15:"shipping/weight";i:107;s:11:"tool/backup";i:108;s:14:"tool/error_log";i:109;s:12:"total/coupon";i:110;s:12:"total/credit";i:111;s:14:"total/handling";i:112;s:16:"total/klarna_fee";i:113;s:19:"total/low_order_fee";i:114;s:12:"total/reward";i:115;s:14:"total/shipping";i:116;s:15:"total/sub_total";i:117;s:9:"total/tax";i:118;s:11:"total/total";i:119;s:13:"total/voucher";i:120;s:9:"user/user";i:121;s:20:"user/user_permission";i:122;s:14:"module/account";i:123;s:14:"payment/alipay";i:124;s:13:"module/filter";i:125;s:14:"module/welcome";i:126;s:18:"module/information";i:127;s:14:"total/shipping";i:128;s:11:"total/total";i:129;s:13:"shipping/flat";i:130;s:13:"shipping/free";i:131;s:14:"payment/tenpay";i:132;s:14:"payment/yeepay";}}'),
 (10, 'Demonstration', '');
 
 -- --------------------------------------------------------
@@ -2712,6 +2962,11 @@ CREATE TABLE IF NOT EXISTS `oc_voucher` (
   PRIMARY KEY (`voucher_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
+--
+-- 转存表中的数据 `oc_voucher`
+--
+
+
 -- --------------------------------------------------------
 
 --
@@ -2726,6 +2981,11 @@ CREATE TABLE IF NOT EXISTS `oc_voucher_history` (
   `date_added` datetime NOT NULL,
   PRIMARY KEY (`voucher_history_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+
+--
+-- 转存表中的数据 `oc_voucher_history`
+--
+
 
 -- --------------------------------------------------------
 
@@ -2898,7 +3158,3 @@ CREATE TABLE IF NOT EXISTS `oc_zone_to_geo_zone` (
 INSERT INTO `oc_zone_to_geo_zone` (`zone_to_geo_zone_id`, `country_id`, `zone_id`, `geo_zone_id`, `date_added`, `date_modified`) VALUES
 (57, 222, 0, 3, '2010-02-26 22:33:24', '0000-00-00 00:00:00'),
 (65, 222, 0, 4, '2010-12-15 15:18:13', '0000-00-00 00:00:00');
-
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
